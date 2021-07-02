@@ -1,0 +1,26 @@
+From: "ab" <TODO>
+To: submit@bugs.debian.org
+Subject: ITP: golang-github-flynn-noise -- Go implementation of the Noise Protocol Framework
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-Debbugs-CC: debian-devel@lists.debian.org, debian-go@lists.debian.org
+
+Package: wnpp
+Severity: wishlist
+Owner: ab <TODO>
+
+* Package name    : golang-github-flynn-noise
+  Version         : 1.0.0-1
+  Upstream Author : Flynn
+* URL             : https://github.com/flynn/noise
+* License         : TODO
+  Programming Lang: Go
+  Description     : Go implementation of the Noise Protocol Framework
+
+ noise Go Reference (https://pkg.go.dev/github.com/flynn/noise) CI Status
+ (https://github.com/flynn/noise/actions) This is a Go package that
+ implements the Noise Protocol Framework (https://noiseprotocol.org). See
+ the documentation (https://pkg.go.dev/github.com/flynn/noise) for usage
+ information.
+
+TODO: perhaps reasoning

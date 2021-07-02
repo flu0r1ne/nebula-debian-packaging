@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Wed, 30 Jun 2021 21:42:30 -0500
+Source: golang-google-protobuf
+Binary: golang-google-protobuf-dev
+Architecture: source all
+Version: 1.27.1-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Changed-By: Alex David <flu0r1ne@flu0r1ne.net>
+Description:
+ golang-google-protobuf-dev - Go support for Google's protocol buffers (library)
+Changes:
+ golang-google-protobuf (1.27.1-1) UNRELEASED; urgency=medium
+ .
+   * Initial release (Closes: TODO)
+Checksums-Sha1:
+ 07a5dd12d589c534a488b71b075c8788957cc619 1339 golang-google-protobuf_1.27.1-1.dsc
+ a4f8c33d648757dd1b5eca71cf629bb702ebb10e 725252 golang-google-protobuf_1.27.1.orig.tar.xz
+ e03a4bc08d1f739b87288487737e991da9bd1778 2280 golang-google-protobuf_1.27.1-1.debian.tar.xz
+ 385d9c405ef0b139b1d89b965c65dd4c2977000c 735496 golang-google-protobuf-dev_1.27.1-1_all.deb
+ 434b1202e93b6d0a1ed5dc71ca193b7ffb3f1228 4916 golang-google-protobuf_1.27.1-1_amd64.buildinfo
+Checksums-Sha256:
+ ca60b8c9c9a6ca425f73451cee938f50f1b198964dbd1869cf379e286b7f15bd 1339 golang-google-protobuf_1.27.1-1.dsc
+ d85193542856f4183f5374e71baf9ddd3470ff13fe77e1acb5c934362f9d5356 725252 golang-google-protobuf_1.27.1.orig.tar.xz
+ 42c7bcd25f2c7cfe65f9e1753edff0c6030d8028a34499949195f00aee32239b 2280 golang-google-protobuf_1.27.1-1.debian.tar.xz
+ fc301e869376b9278b8fba593f71f4216dede7c6e2cad491096b675e2e5d37f5 735496 golang-google-protobuf-dev_1.27.1-1_all.deb
+ 3d63fd17e9e6865882af419689b6d157895c79b9390485025f72d71706ffbf10 4916 golang-google-protobuf_1.27.1-1_amd64.buildinfo
+Files:
+ 357c388c9348a7264a945e609c18b060 1339 devel optional golang-google-protobuf_1.27.1-1.dsc
+ 1c2113c5a458cb25fd2d414be4595258 725252 devel optional golang-google-protobuf_1.27.1.orig.tar.xz
+ d11d6d0cdff0a65d8e00ba2f0415e97b 2280 devel optional golang-google-protobuf_1.27.1-1.debian.tar.xz
+ 30b69fd7a9726beff427427eeacb7918 735496 devel optional golang-google-protobuf-dev_1.27.1-1_all.deb
+ 984a29e273c7f52a751a3ef89c7ea87f 4916 devel optional golang-google-protobuf_1.27.1-1_amd64.buildinfo

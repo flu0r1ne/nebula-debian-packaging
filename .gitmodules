@@ -1,0 +1,18 @@
+[submodule "go-cmp-pkg/golang-github-google-go-cmp-dev"]
+	path = go-cmp-pkg/golang-github-google-go-cmp-dev
+	url = https://github.com/flu0r1ne/golang-github-google-go-cmp-dev
+[submodule "go-qrcode-pkg/golang-github-skip2-go-qrcode-dev"]
+	path = go-qrcode-pkg/golang-github-skip2-go-qrcode-dev
+	url = https://github.com/flu0r1ne/golang-github-skip2-go-qrcode-dev
+[submodule "noise-pkg/golang-github-flynn-noise-dev"]
+	path = noise-pkg/golang-github-flynn-noise-dev
+	url = https://github.com/flu0r1ne/golang-github-flynn-noise-dev
+[submodule "nbrownus-go-metrics-prometheus-pkg/golang-github-nbrownus-go-metrics-prometheus-dev"]
+	path = nbrownus-go-metrics-prometheus-pkg/golang-github-nbrownus-go-metrics-prometheus-dev
+	url = https://github.com/flu0r1ne/golang-github-nbrownus-go-metrics-prometheus-dev
+[submodule "protobuf-go-pkg/golang-google-protobuf-dev"]
+	path = protobuf-go-pkg/golang-google-protobuf-dev
+	url = https://github.com/flu0r1ne/golang-google-protobuf-dev
+[submodule "nebula-pkg/nebula"]
+	path = nebula-pkg/nebula
+	url = https://github.com/flu0r1ne/nebula

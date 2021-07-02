@@ -1,0 +1,468 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package nebula
+dpkg-buildpackage: info: source version 1.4.0-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Alex David <flu0r1ne@flu0r1ne.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with=golang --buildsystem=golang --builddirectory=_build
+   dh_auto_clean -O--buildsystem=golang -O--builddirectory=_build
+   dh_autoreconf_clean -O--buildsystem=golang -O--builddirectory=_build
+   dh_clean -O--buildsystem=golang -O--builddirectory=_build
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building nebula using existing ./nebula_1.4.0.orig.tar.gz
+dpkg-source: info: building nebula in nebula_1.4.0-1.debian.tar.xz
+dpkg-source: info: building nebula in nebula_1.4.0-1.dsc
+ debian/rules build
+dh build --with=golang --buildsystem=golang --builddirectory=_build
+   dh_update_autotools_config -O--buildsystem=golang -O--builddirectory=_build
+   dh_autoreconf -O--buildsystem=golang -O--builddirectory=_build
+   dh_auto_configure -O--buildsystem=golang -O--builddirectory=_build
+   dh_auto_build -O--buildsystem=golang -O--builddirectory=_build
+	cd _build && go install -trimpath -v -p 32 github.com/slackhq/nebula github.com/slackhq/nebula/cert github.com/slackhq/nebula/cmd/nebula github.com/slackhq/nebula/cmd/nebula-cert github.com/slackhq/nebula/cmd/nebula-service github.com/slackhq/nebula/e2e github.com/slackhq/nebula/e2e/router github.com/slackhq/nebula/sshd github.com/slackhq/nebula/util
+internal/unsafeheader
+google.golang.org/protobuf/internal/flags
+github.com/slackhq/nebula/e2e
+unicode/utf8
+runtime/internal/atomic
+runtime/internal/sys
+crypto/subtle
+image/color
+crypto/internal/subtle
+encoding
+internal/race
+internal/cpu
+math/bits
+runtime/cgo
+runtime/internal/math
+golang.org/x/crypto/internal/subtle
+vendor/golang.org/x/crypto/cryptobyte/asn1
+vendor/golang.org/x/crypto/internal/subtle
+sync/atomic
+golang.org/x/net/internal/iana
+unicode/utf16
+internal/nettrace
+unicode
+golang.org/x/sys/internal/unsafeheader
+github.com/slackhq/nebula/e2e/router
+container/list
+google.golang.org/protobuf/internal/set
+internal/bytealg
+math
+runtime
+sync
+internal/reflectlite
+internal/testlog
+google.golang.org/protobuf/internal/pragma
+internal/singleflight
+internal/sysinfo
+math/rand
+errors
+sort
+io
+internal/oserror
+strconv
+path
+vendor/golang.org/x/net/dns/dnsmessage
+syscall
+github.com/beorn7/perks/quantile
+hash
+bytes
+strings
+crypto/internal/randutil
+text/tabwriter
+crypto/hmac
+hash/crc32
+hash/fnv
+hash/adler32
+vendor/golang.org/x/crypto/hkdf
+crypto/rc4
+encoding/base32
+reflect
+crypto
+golang.org/x/crypto/blowfish
+vendor/golang.org/x/text/transform
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+github.com/armon/go-radix
+bufio
+regexp/syntax
+github.com/anmitsu/go-shlex
+image
+internal/syscall/execenv
+internal/syscall/unix
+time
+regexp
+context
+io/fs
+internal/poll
+encoding/binary
+internal/fmtsort
+os
+crypto/cipher
+crypto/sha256
+encoding/base64
+crypto/sha512
+golang.org/x/crypto/poly1305
+crypto/md5
+crypto/ed25519/internal/edwards25519
+crypto/sha1
+vendor/golang.org/x/crypto/poly1305
+github.com/cespare/xxhash
+golang.org/x/sys/unix
+encoding/pem
+crypto/aes
+golang.org/x/crypto/chacha20
+crypto/des
+vendor/golang.org/x/crypto/chacha20
+golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
+google.golang.org/protobuf/internal/detrand
+runtime/debug
+path/filepath
+fmt
+net
+os/signal
+io/ioutil
+os/exec
+golang.org/x/sys/cpu
+github.com/prometheus/procfs/internal/util
+vendor/golang.org/x/sys/cpu
+vendor/golang.org/x/crypto/chacha20poly1305
+golang.org/x/crypto/blake2s
+golang.org/x/crypto/blake2b
+golang.org/x/crypto/chacha20poly1305
+encoding/hex
+log
+flag
+compress/flate
+encoding/json
+github.com/imdario/mergo
+net/url
+vendor/golang.org/x/crypto/curve25519
+mime/quotedprintable
+net/http/internal
+github.com/prometheus/procfs/internal/fs
+vendor/golang.org/x/net/http2/hpack
+mime
+google.golang.org/protobuf/internal/errors
+math/big
+google.golang.org/protobuf/internal/version
+go/token
+vendor/golang.org/x/text/unicode/norm
+github.com/pmezard/go-difflib/difflib
+text/template/parse
+runtime/trace
+golang.org/x/net/bpf
+gopkg.in/yaml.v2
+golang.org/x/crypto/curve25519
+gopkg.in/yaml.v3
+github.com/davecgh/go-spew/spew
+google.golang.org/protobuf/encoding/protowire
+github.com/skip2/go-qrcode/bitset
+vendor/golang.org/x/text/unicode/bidi
+google.golang.org/protobuf/reflect/protoreflect
+testing
+github.com/skip2/go-qrcode/reedsolomon
+compress/gzip
+compress/zlib
+github.com/vishvananda/netns
+golang.org/x/term
+runtime/pprof
+image/png
+vendor/golang.org/x/text/secure/bidirule
+text/template
+golang.org/x/crypto/ssh/terminal
+vendor/golang.org/x/net/idna
+github.com/prometheus/common/model
+github.com/sirupsen/logrus
+github.com/golang/protobuf/proto
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+github.com/gogo/protobuf/proto
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/order
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/runtime/protoiface
+github.com/skip2/go-qrcode
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/internal/encoding/text
+crypto/elliptic
+crypto/rand
+encoding/asn1
+crypto/dsa
+crypto/ed25519
+crypto/rsa
+github.com/flynn/noise
+google.golang.org/protobuf/proto
+google.golang.org/protobuf/internal/encoding/defval
+golang.org/x/crypto/ed25519
+crypto/x509/pkix
+vendor/golang.org/x/crypto/cryptobyte
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/encoding/prototext
+crypto/ecdsa
+google.golang.org/protobuf/internal/encoding/tag
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/timestamp
+github.com/golang/protobuf/ptypes/duration
+github.com/matttproud/golang_protobuf_extensions/pbutil
+github.com/prometheus/client_model/go
+github.com/golang/protobuf/ptypes
+google.golang.org/protobuf/internal/impl
+github.com/prometheus/client_golang/prometheus/internal
+vendor/golang.org/x/net/http/httpproxy
+net/textproto
+golang.org/x/net/internal/socket
+log/syslog
+github.com/vishvananda/netlink/nl
+crypto/x509
+github.com/prometheus/procfs
+github.com/kardianos/service
+github.com/rcrowley/go-metrics
+vendor/golang.org/x/net/http/httpguts
+mime/multipart
+golang.org/x/net/ipv6
+golang.org/x/net/ipv4
+github.com/vishvananda/netlink
+golang.org/x/crypto/ssh
+crypto/tls
+github.com/cyberdelia/go-metrics-graphite
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/runtime/protoimpl
+github.com/slackhq/nebula/cert
+net/http/httptrace
+github.com/slackhq/nebula/sshd
+github.com/miekg/dns
+net/http
+github.com/slackhq/nebula/cmd/nebula-cert
+expvar
+net/http/httptest
+github.com/prometheus/common/expfmt
+github.com/stretchr/testify/assert
+github.com/prometheus/client_golang/prometheus
+github.com/slackhq/nebula/util
+github.com/nbrownus/go-metrics-prometheus
+github.com/prometheus/client_golang/prometheus/promhttp
+github.com/slackhq/nebula
+github.com/slackhq/nebula/cmd/nebula
+github.com/slackhq/nebula/cmd/nebula-service
+   dh_auto_test -O--buildsystem=golang -O--builddirectory=_build
+	cd _build && go test -vet=off -v -p 32 github.com/slackhq/nebula github.com/slackhq/nebula/cert github.com/slackhq/nebula/cmd/nebula github.com/slackhq/nebula/cmd/nebula-cert github.com/slackhq/nebula/cmd/nebula-service github.com/slackhq/nebula/e2e github.com/slackhq/nebula/e2e/router github.com/slackhq/nebula/sshd github.com/slackhq/nebula/util
+=== RUN   TestAllowList_Allow
+--- PASS: TestAllowList_Allow (0.00s)
+=== RUN   TestAllowList_AllowName
+--- PASS: TestAllowList_AllowName (0.00s)
+=== RUN   TestBits
+--- PASS: TestBits (0.00s)
+=== RUN   TestBitsDupeCounter
+--- PASS: TestBitsDupeCounter (0.00s)
+=== RUN   TestBitsOutOfWindowCounter
+--- PASS: TestBitsOutOfWindowCounter (0.00s)
+=== RUN   TestBitsLostCounter
+--- PASS: TestBitsLostCounter (0.00s)
+=== RUN   TestCIDR6Tree_MostSpecificContains
+--- PASS: TestCIDR6Tree_MostSpecificContains (0.00s)
+=== RUN   TestCIDR6Tree_MostSpecificContainsIpV6
+--- PASS: TestCIDR6Tree_MostSpecificContainsIpV6 (0.00s)
+=== RUN   TestCIDRTree_Contains
+--- PASS: TestCIDRTree_Contains (0.00s)
+=== RUN   TestCIDRTree_MostSpecificContains
+--- PASS: TestCIDRTree_MostSpecificContains (0.00s)
+=== RUN   TestCIDRTree_Match
+--- PASS: TestCIDRTree_Match (0.00s)
+=== RUN   TestConfig_Load
+--- PASS: TestConfig_Load (0.00s)
+=== RUN   TestConfig_Get
+--- PASS: TestConfig_Get (0.00s)
+=== RUN   TestConfig_GetStringSlice
+--- PASS: TestConfig_GetStringSlice (0.00s)
+=== RUN   TestConfig_GetBool
+--- PASS: TestConfig_GetBool (0.00s)
+=== RUN   TestConfig_GetAllowList
+--- PASS: TestConfig_GetAllowList (0.00s)
+=== RUN   TestConfig_HasChanged
+--- PASS: TestConfig_HasChanged (0.00s)
+=== RUN   TestConfig_ReloadConfig
+--- PASS: TestConfig_ReloadConfig (0.00s)
+=== RUN   Test_NewConnectionManagerTest
+--- PASS: Test_NewConnectionManagerTest (0.00s)
+=== RUN   Test_NewConnectionManagerTest2
+--- PASS: Test_NewConnectionManagerTest2 (0.00s)
+=== RUN   TestControl_GetHostInfoByVpnIP
+--- PASS: TestControl_GetHostInfoByVpnIP (0.00s)
+=== RUN   TestParsequery
+--- PASS: TestParsequery (0.00s)
+=== RUN   TestNewFirewall
+--- PASS: TestNewFirewall (0.00s)
+=== RUN   TestFirewall_AddRule
+--- PASS: TestFirewall_AddRule (0.00s)
+=== RUN   TestFirewall_Drop
+--- PASS: TestFirewall_Drop (0.00s)
+=== RUN   TestFirewall_Drop2
+--- PASS: TestFirewall_Drop2 (0.00s)
+=== RUN   TestFirewall_Drop3
+--- PASS: TestFirewall_Drop3 (0.00s)
+=== RUN   TestFirewall_DropConntrackReload
+--- PASS: TestFirewall_DropConntrackReload (0.00s)
+=== RUN   Test_parsePort
+--- PASS: Test_parsePort (0.00s)
+=== RUN   TestNewFirewallFromConfig
+--- PASS: TestNewFirewallFromConfig (0.00s)
+=== RUN   TestAddFirewallRulesFromConfig
+--- PASS: TestAddFirewallRulesFromConfig (0.00s)
+=== RUN   TestTCPRTTTracking
+--- PASS: TestTCPRTTTracking (0.00s)
+=== RUN   TestFirewall_convertRule
+--- PASS: TestFirewall_convertRule (0.00s)
+=== RUN   Test_NewHandshakeManagerVpnIP
+--- PASS: Test_NewHandshakeManagerVpnIP (0.00s)
+=== RUN   Test_NewHandshakeManagerTrigger
+--- PASS: Test_NewHandshakeManagerTrigger (0.00s)
+=== RUN   TestEncode
+--- PASS: TestEncode (0.00s)
+=== RUN   TestParse
+--- PASS: TestParse (0.00s)
+=== RUN   TestTypeName
+--- PASS: TestTypeName (0.00s)
+=== RUN   TestSubTypeName
+--- PASS: TestSubTypeName (0.00s)
+=== RUN   TestTypeMap
+--- PASS: TestTypeMap (0.00s)
+=== RUN   TestHeader_String
+--- PASS: TestHeader_String (0.00s)
+=== RUN   TestHeader_MarshalJSON
+--- PASS: TestHeader_MarshalJSON (0.00s)
+=== RUN   TestOldIPv4Only
+--- PASS: TestOldIPv4Only (0.00s)
+=== RUN   TestNewLhQuery
+--- PASS: TestNewLhQuery (0.00s)
+=== RUN   Test_lhStaticMapping
+--- PASS: Test_lhStaticMapping (0.00s)
+=== RUN   TestLighthouse_Memory
+--- PASS: TestLighthouse_Memory (0.00s)
+=== RUN   Test_ipMaskContains
+--- PASS: Test_ipMaskContains (0.00s)
+=== RUN   TestContextualError_Log
+--- PASS: TestContextualError_Log (0.00s)
+=== RUN   Test_newPacket
+--- PASS: Test_newPacket (0.00s)
+=== RUN   TestNewPunchyFromConfig
+--- PASS: TestNewPunchyFromConfig (0.00s)
+=== RUN   TestRemoteList_Rebuild
+--- PASS: TestRemoteList_Rebuild (0.00s)
+=== RUN   TestNewSystemTimerWheel
+--- PASS: TestNewSystemTimerWheel (0.00s)
+=== RUN   TestSystemTimerWheel_findWheel
+--- PASS: TestSystemTimerWheel_findWheel (0.00s)
+=== RUN   TestSystemTimerWheel_Add
+--- PASS: TestSystemTimerWheel_Add (0.00s)
+=== RUN   TestSystemTimerWheel_Purge
+--- PASS: TestSystemTimerWheel_Purge (0.00s)
+=== RUN   TestNewTimerWheel
+--- PASS: TestNewTimerWheel (0.00s)
+=== RUN   TestTimerWheel_findWheel
+--- PASS: TestTimerWheel_findWheel (0.00s)
+=== RUN   TestTimerWheel_Add
+--- PASS: TestTimerWheel_Add (0.00s)
+=== RUN   TestTimerWheel_Purge
+--- PASS: TestTimerWheel_Purge (0.00s)
+=== RUN   TestTunAdvMSS
+=== RUN   TestTunAdvMSS/default
+=== RUN   TestTunAdvMSS/default-min
+=== RUN   TestTunAdvMSS/default-low
+=== RUN   TestTunAdvMSS/route
+=== RUN   TestTunAdvMSS/route-min
+=== RUN   TestTunAdvMSS/route-high
+--- PASS: TestTunAdvMSS (0.00s)
+    --- PASS: TestTunAdvMSS/default (0.00s)
+    --- PASS: TestTunAdvMSS/default-min (0.00s)
+    --- PASS: TestTunAdvMSS/default-low (0.00s)
+    --- PASS: TestTunAdvMSS/route (0.00s)
+    --- PASS: TestTunAdvMSS/route-min (0.00s)
+    --- PASS: TestTunAdvMSS/route-high (0.00s)
+=== RUN   Test_parseRoutes
+--- PASS: Test_parseRoutes (0.00s)
+=== RUN   Test_parseUnsafeRoutes
+--- PASS: Test_parseUnsafeRoutes (0.00s)
+PASS
+ok  	github.com/slackhq/nebula	0.012s
+=== RUN   TestMarshalingNebulaCertificate
+--- FAIL: TestMarshalingNebulaCertificate (0.00s)
+panic: protobuf tag not enough fields in RawNebulaCertificate.state:  [recovered]
+	panic: protobuf tag not enough fields in RawNebulaCertificate.state: 
+
+goroutine 6 [running]:
+testing.tRunner.func1.2(0x759d60, 0xc00007f130)
+	/usr/lib/go-1.16/src/testing/testing.go:1143 +0x332
+testing.tRunner.func1(0xc000001b00)
+	/usr/lib/go-1.16/src/testing/testing.go:1146 +0x4b6
+panic(0x759d60, 0xc00007f130)
+	/usr/lib/go-1.16/src/runtime/panic.go:965 +0x1b9
+github.com/golang/protobuf/proto.(*unmarshalInfo).computeUnmarshalInfo(0xc0000e74a0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:332 +0x1777
+github.com/golang/protobuf/proto.(*unmarshalInfo).unmarshal(0xc0000e74a0, 0xc000012820, 0xc0001ac000, 0xc7, 0xc7, 0x40ffb8, 0x20)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:136 +0xf45
+github.com/golang/protobuf/proto.(*InternalMessageInfo).Unmarshal(0xc0000a0300, 0x8370a0, 0xc000012820, 0xc0001ac000, 0xc7, 0xc7, 0xc000012801, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:63 +0x66
+github.com/golang/protobuf/proto.(*Buffer).Unmarshal(0xc0000c9a60, 0x8370a0, 0xc000012820, 0x0, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/decode.go:424 +0x1f5
+github.com/golang/protobuf/proto.Unmarshal(0xc0001ac000, 0xc7, 0xc7, 0x8370a0, 0xc000012820, 0x7fddc1c07108, 0x1f)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/decode.go:342 +0x15e
+github.com/slackhq/nebula/cert.UnmarshalNebulaCertificate(0xc0001ac000, 0xc7, 0xc7, 0x0, 0x0, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/slackhq/nebula/cert/cert.go:59 +0xa5
+github.com/slackhq/nebula/cert.TestMarshalingNebulaCertificate(0xc000001b00)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/slackhq/nebula/cert/cert_test.go:50 +0xa65
+testing.tRunner(0xc000001b00, 0x7e2a48)
+	/usr/lib/go-1.16/src/testing/testing.go:1193 +0xef
+created by testing.(*T).Run
+	/usr/lib/go-1.16/src/testing/testing.go:1238 +0x2b3
+FAIL	github.com/slackhq/nebula/cert	0.005s
+?   	github.com/slackhq/nebula/cmd/nebula	[no test files]
+=== RUN   Test_caSummary
+--- PASS: Test_caSummary (0.00s)
+=== RUN   Test_caHelp
+--- PASS: Test_caHelp (0.00s)
+=== RUN   Test_ca
+--- FAIL: Test_ca (0.00s)
+panic: protobuf tag not enough fields in RawNebulaCertificate.state:  [recovered]
+	panic: protobuf tag not enough fields in RawNebulaCertificate.state: 
+
+goroutine 37 [running]:
+testing.tRunner.func1.2(0x77cc00, 0xc000191750)
+	/usr/lib/go-1.16/src/testing/testing.go:1143 +0x332
+testing.tRunner.func1(0xc000184a80)
+	/usr/lib/go-1.16/src/testing/testing.go:1146 +0x4b6
+panic(0x77cc00, 0xc000191750)
+	/usr/lib/go-1.16/src/runtime/panic.go:965 +0x1b9
+github.com/golang/protobuf/proto.(*unmarshalInfo).computeUnmarshalInfo(0xc0001d1400)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:332 +0x1777
+github.com/golang/protobuf/proto.(*unmarshalInfo).unmarshal(0xc0001d1400, 0xc0001a29b0, 0xc000234090, 0x89, 0x8a, 0x410058, 0x20)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:136 +0xf45
+github.com/golang/protobuf/proto.(*InternalMessageInfo).Unmarshal(0xc0001cc3a0, 0x864e40, 0xc0001a29b0, 0xc000234090, 0x89, 0x8a, 0xc0001a2901, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/table_unmarshal.go:63 +0x66
+github.com/golang/protobuf/proto.(*Buffer).Unmarshal(0xc0001a9b60, 0x864e40, 0xc0001a29b0, 0x0, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/decode.go:424 +0x1f5
+github.com/golang/protobuf/proto.Unmarshal(0xc000234090, 0x89, 0x8a, 0x864e40, 0xc0001a29b0, 0xc0002362e6, 0x18)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/golang/protobuf/proto/decode.go:342 +0x15e
+github.com/slackhq/nebula/cert.UnmarshalNebulaCertificate(0xc000234090, 0x89, 0x8a, 0xc000195e01, 0xc0002362ff, 0x0)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/slackhq/nebula/cert/cert.go:59 +0xa5
+github.com/slackhq/nebula/cert.UnmarshalNebulaCertificateFromPEM(0xc000236200, 0xff, 0x200, 0xff, 0x200, 0x0, 0x0, 0x0, 0x101)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/slackhq/nebula/cert/cert.go:133 +0x159
+github.com/slackhq/nebula/cmd/nebula-cert.Test_ca(0xc000184a80)
+	/home/flu0r1ne/upstream/nebula-pkg/nebula-1.4.0/_build/src/github.com/slackhq/nebula/cmd/nebula-cert/ca_test.go:100 +0x102d
+testing.tRunner(0xc000184a80, 0x80cb80)
+	/usr/lib/go-1.16/src/testing/testing.go:1193 +0xef
+created by testing.(*T).Run
+	/usr/lib/go-1.16/src/testing/testing.go:1238 +0x2b3
+FAIL	github.com/slackhq/nebula/cmd/nebula-cert	0.006s
+?   	github.com/slackhq/nebula/cmd/nebula-service	[no test files]
+?   	github.com/slackhq/nebula/e2e	[no test files]
+?   	github.com/slackhq/nebula/e2e/router	[no test files]
+?   	github.com/slackhq/nebula/sshd	[no test files]
+?   	github.com/slackhq/nebula/util	[no test files]
+FAIL
+dh_auto_test: cd _build && go test -vet=off -v -p 32 github.com/slackhq/nebula github.com/slackhq/nebula/cert github.com/slackhq/nebula/cmd/nebula github.com/slackhq/nebula/cmd/nebula-cert github.com/slackhq/nebula/cmd/nebula-service github.com/slackhq/nebula/e2e github.com/slackhq/nebula/e2e/router github.com/slackhq/nebula/sshd github.com/slackhq/nebula/util returned exit code 1
+make: *** [debian/rules:22: build] Error 1
+dpkg-buildpackage: error: debian/rules build subprocess returned exit status 2

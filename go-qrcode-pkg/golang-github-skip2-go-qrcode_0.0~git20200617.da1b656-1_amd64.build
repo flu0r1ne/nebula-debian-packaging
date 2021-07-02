@@ -1,0 +1,195 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package golang-github-skip2-go-qrcode
+dpkg-buildpackage: info: source version 0.0~git20200617.da1b656-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Alex David <flu0r1ne@flu0r1ne.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --builddirectory=_build --buildsystem=golang --with=golang
+   dh_auto_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_clean -O--builddirectory=_build -O--buildsystem=golang
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building golang-github-skip2-go-qrcode using existing ./golang-github-skip2-go-qrcode_0.0~git20200617.da1b656.orig.tar.xz
+dpkg-source: info: building golang-github-skip2-go-qrcode in golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.debian.tar.xz
+dpkg-source: info: building golang-github-skip2-go-qrcode in golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.dsc
+ debian/rules binary
+dh binary --builddirectory=_build --buildsystem=golang --with=golang
+   dh_update_autotools_config -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_configure -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_build -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go install -trimpath -v -p 32 github.com/skip2/go-qrcode github.com/skip2/go-qrcode/bitset github.com/skip2/go-qrcode/reedsolomon
+internal/unsafeheader
+internal/race
+runtime/internal/sys
+runtime/internal/atomic
+unicode
+unicode/utf8
+image/color
+math/bits
+internal/cpu
+sync/atomic
+runtime/internal/math
+internal/testlog
+internal/bytealg
+math
+runtime
+sync
+internal/reflectlite
+errors
+sort
+internal/oserror
+io
+strconv
+syscall
+hash
+bytes
+strings
+hash/adler32
+hash/crc32
+reflect
+bufio
+image
+internal/syscall/execenv
+internal/syscall/unix
+time
+internal/poll
+internal/fmtsort
+encoding/binary
+os
+path/filepath
+fmt
+io/ioutil
+log
+compress/flate
+github.com/skip2/go-qrcode/bitset
+github.com/skip2/go-qrcode/reedsolomon
+compress/zlib
+image/png
+github.com/skip2/go-qrcode
+   dh_auto_test -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go test -vet=off -v -p 32 github.com/skip2/go-qrcode github.com/skip2/go-qrcode/bitset github.com/skip2/go-qrcode/reedsolomon
+=== RUN   TestClassifyDataMode
+--- PASS: TestClassifyDataMode (0.00s)
+=== RUN   TestByteModeLengthCalculations
+--- PASS: TestByteModeLengthCalculations (0.00s)
+=== RUN   TestSingleModeEncodings
+--- PASS: TestSingleModeEncodings (0.00s)
+=== RUN   TestOptimiseEncoding
+--- PASS: TestOptimiseEncoding (0.00s)
+=== RUN   TestExampleEncode
+PNG is 431 bytes long--- PASS: TestExampleEncode (0.00s)
+=== RUN   TestExampleWriteFile
+--- PASS: TestExampleWriteFile (0.00s)
+=== RUN   TestExampleEncodeWithColourAndWithoutBorder
+--- PASS: TestExampleEncodeWithColourAndWithoutBorder (0.00s)
+=== RUN   TestDecodeBasic
+    qrcode_decode_test.go:34: Decode tests not enabled
+--- SKIP: TestDecodeBasic (0.00s)
+=== RUN   TestDecodeAllVersionLevels
+    qrcode_decode_test.go:87: Decode tests not enabled
+--- SKIP: TestDecodeAllVersionLevels (0.00s)
+=== RUN   TestDecodeAllCharacters
+    qrcode_decode_test.go:118: Decode tests not enabled
+--- SKIP: TestDecodeAllCharacters (0.00s)
+=== RUN   TestDecodeFuzz
+    qrcode_decode_test.go:142: Decode fuzz tests not enabled
+--- SKIP: TestDecodeFuzz (0.00s)
+=== RUN   TestQRCodeMaxCapacity
+--- PASS: TestQRCodeMaxCapacity (0.00s)
+=== RUN   TestQRCodeVersionCapacity
+--- PASS: TestQRCodeVersionCapacity (0.00s)
+=== RUN   TestQRCodeISOAnnexIExample
+--- PASS: TestQRCodeISOAnnexIExample (0.00s)
+=== RUN   TestBuildRegularSymbol
+--- PASS: TestBuildRegularSymbol (0.00s)
+=== RUN   TestSymbolBasic
+--- PASS: TestSymbolBasic (0.00s)
+=== RUN   TestSymbolPenalties
+--- PASS: TestSymbolPenalties (0.00s)
+=== RUN   TestFormatInfo
+--- PASS: TestFormatInfo (0.00s)
+=== RUN   TestVersionInfo
+--- PASS: TestVersionInfo (0.00s)
+=== RUN   TestNumBitsToPadToCodeoword
+--- PASS: TestNumBitsToPadToCodeoword (0.00s)
+PASS
+ok  	github.com/skip2/go-qrcode	0.009s
+=== RUN   TestNewBitset
+--- PASS: TestNewBitset (0.00s)
+=== RUN   TestAppend
+--- PASS: TestAppend (0.00s)
+=== RUN   TestAppendByte
+--- PASS: TestAppendByte (0.00s)
+=== RUN   TestAppendUint32
+--- PASS: TestAppendUint32 (0.00s)
+=== RUN   TestAppendBools
+--- PASS: TestAppendBools (0.00s)
+=== RUN   TestLen
+--- PASS: TestLen (0.00s)
+=== RUN   TestAt
+--- PASS: TestAt (0.00s)
+=== RUN   TestExample
+--- PASS: TestExample (0.00s)
+=== RUN   TestByteAt
+--- PASS: TestByteAt (0.00s)
+=== RUN   TestSubstr
+--- PASS: TestSubstr (0.00s)
+PASS
+ok  	github.com/skip2/go-qrcode/bitset	0.002s
+=== RUN   TestGFMultiplicationIdentities
+--- PASS: TestGFMultiplicationIdentities (0.00s)
+=== RUN   TestGFMultiplicationAndDivision
+--- PASS: TestGFMultiplicationAndDivision (0.00s)
+=== RUN   TestGFInverse
+--- PASS: TestGFInverse (0.00s)
+=== RUN   TestGFDivide
+--- PASS: TestGFDivide (0.00s)
+=== RUN   TestGFPolyAdd
+--- PASS: TestGFPolyAdd (0.00s)
+=== RUN   TestGFPolyequals
+--- PASS: TestGFPolyequals (0.00s)
+=== RUN   TestGFPolyMultiply
+--- PASS: TestGFPolyMultiply (0.00s)
+=== RUN   TestGFPolyRemainder
+--- PASS: TestGFPolyRemainder (0.00s)
+=== RUN   TestGeneratorPoly
+--- PASS: TestGeneratorPoly (0.00s)
+=== RUN   TestEncode
+--- PASS: TestEncode (0.00s)
+PASS
+ok  	github.com/skip2/go-qrcode/reedsolomon	0.003s
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--builddirectory=_build -O--buildsystem=golang
+   dh_prep -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_install -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdocs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installchangelogs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installinit -O--builddirectory=_build -O--buildsystem=golang
+   dh_installsystemduser -O--builddirectory=_build -O--buildsystem=golang
+   dh_perl -O--builddirectory=_build -O--buildsystem=golang
+   dh_link -O--builddirectory=_build -O--buildsystem=golang
+   dh_strip_nondeterminism -O--builddirectory=_build -O--buildsystem=golang
+   dh_compress -O--builddirectory=_build -O--buildsystem=golang
+   dh_fixperms -O--builddirectory=_build -O--buildsystem=golang
+   dh_missing -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdeb -O--builddirectory=_build -O--buildsystem=golang
+   dh_golang -O--builddirectory=_build -O--buildsystem=golang
+   dh_gencontrol -O--builddirectory=_build -O--buildsystem=golang
+   dh_md5sums -O--builddirectory=_build -O--buildsystem=golang
+   dh_builddeb -O--builddirectory=_build -O--buildsystem=golang
+dpkg-deb: building package 'golang-github-skip2-go-qrcode-dev' in '../golang-github-skip2-go-qrcode-dev_0.0~git20200617.da1b656-1_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1_amd64.changes ...
+W: golang-github-skip2-go-qrcode source: newer-standards-version 4.5.0 (current is 4.3.0)
+W: golang-github-skip2-go-qrcode-dev: wrong-bug-number-in-closes l3:#nnnn
+W: golang-github-skip2-go-qrcode-dev: new-package-should-close-itp-bug
+E: golang-github-skip2-go-qrcode-dev: changelog-is-dh_make-template
+Finished running lintian.

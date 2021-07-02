@@ -1,0 +1,2041 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package golang-github-google-go-cmp
+dpkg-buildpackage: info: source version 0.5.6-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Alex David <flu0r1ne@flu0r1ne.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --builddirectory=_build --buildsystem=golang --with=golang
+   dh_auto_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_clean -O--builddirectory=_build -O--buildsystem=golang
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building golang-github-google-go-cmp using existing ./golang-github-google-go-cmp_0.5.6.orig.tar.gz
+dpkg-source: info: building golang-github-google-go-cmp in golang-github-google-go-cmp_0.5.6-1.debian.tar.xz
+dpkg-source: info: building golang-github-google-go-cmp in golang-github-google-go-cmp_0.5.6-1.dsc
+ debian/rules binary
+dh binary --builddirectory=_build --buildsystem=golang --with=golang
+   dh_update_autotools_config -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_configure -O--builddirectory=_build -O--buildsystem=golang
+dh_auto_configure: "github.com/google/go-cmp" is already installed. Please check for circular dependencies.
+
+   dh_auto_build -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go install -trimpath -v -p 32 github.com/google/go-cmp/cmp github.com/google/go-cmp/cmp/cmpopts github.com/google/go-cmp/cmp/internal/diff github.com/google/go-cmp/cmp/internal/flags github.com/google/go-cmp/cmp/internal/function github.com/google/go-cmp/cmp/internal/testprotos github.com/google/go-cmp/cmp/internal/teststructs github.com/google/go-cmp/cmp/internal/teststructs/foo1 github.com/google/go-cmp/cmp/internal/teststructs/foo2 github.com/google/go-cmp/cmp/internal/value
+internal/unsafeheader
+github.com/google/go-cmp/cmp/internal/teststructs/foo1
+sync/atomic
+internal/cpu
+math/bits
+github.com/google/go-cmp/cmp/internal/testprotos
+runtime/internal/sys
+unicode/utf8
+internal/race
+runtime/internal/atomic
+github.com/google/go-cmp/cmp/internal/flags
+github.com/google/go-cmp/cmp/internal/teststructs/foo2
+unicode
+runtime/internal/math
+internal/testlog
+internal/bytealg
+math
+runtime
+internal/reflectlite
+sync
+math/rand
+errors
+sort
+io
+strconv
+internal/oserror
+syscall
+bytes
+strings
+reflect
+regexp/syntax
+internal/syscall/execenv
+time
+internal/syscall/unix
+regexp
+github.com/google/go-cmp/cmp/internal/diff
+internal/poll
+github.com/google/go-cmp/cmp/internal/teststructs
+os
+internal/fmtsort
+github.com/google/go-cmp/cmp/internal/function
+fmt
+github.com/google/go-cmp/cmp/internal/value
+github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp/cmpopts
+   dh_auto_test -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go test -vet=off -v -p 32 github.com/google/go-cmp/cmp github.com/google/go-cmp/cmp/cmpopts github.com/google/go-cmp/cmp/internal/diff github.com/google/go-cmp/cmp/internal/flags github.com/google/go-cmp/cmp/internal/function github.com/google/go-cmp/cmp/internal/testprotos github.com/google/go-cmp/cmp/internal/teststructs github.com/google/go-cmp/cmp/internal/teststructs/foo1 github.com/google/go-cmp/cmp/internal/teststructs/foo2 github.com/google/go-cmp/cmp/internal/value
+=== RUN   TestOptionPanic
+=== RUN   TestOptionPanic/AllowUnexported
+=== RUN   TestOptionPanic/AllowUnexported#01
+=== RUN   TestOptionPanic/AllowUnexported#02
+=== RUN   TestOptionPanic/AllowUnexported#03
+=== RUN   TestOptionPanic/AllowUnexported#04
+=== RUN   TestOptionPanic/Comparer
+=== RUN   TestOptionPanic/Comparer#01
+=== RUN   TestOptionPanic/Comparer#02
+=== RUN   TestOptionPanic/Comparer#03
+=== RUN   TestOptionPanic/Comparer#04
+=== RUN   TestOptionPanic/Comparer#05
+=== RUN   TestOptionPanic/Transformer
+=== RUN   TestOptionPanic/Transformer#01
+=== RUN   TestOptionPanic/Transformer#02
+=== RUN   TestOptionPanic/Transformer#03
+=== RUN   TestOptionPanic/Transformer#04
+=== RUN   TestOptionPanic/Transformer#05
+=== RUN   TestOptionPanic/Transformer#06
+=== RUN   TestOptionPanic/Transformer#07
+=== RUN   TestOptionPanic/Transformer#08
+=== RUN   TestOptionPanic/Transformer#09
+=== RUN   TestOptionPanic/FilterPath
+=== RUN   TestOptionPanic/FilterPath#01
+=== RUN   TestOptionPanic/FilterPath#02
+=== RUN   TestOptionPanic/FilterPath#03
+=== RUN   TestOptionPanic/FilterPath#04
+=== RUN   TestOptionPanic/FilterValues
+=== RUN   TestOptionPanic/FilterValues#01
+=== RUN   TestOptionPanic/FilterValues#02
+=== RUN   TestOptionPanic/FilterValues#03
+=== RUN   TestOptionPanic/FilterValues#04
+=== RUN   TestOptionPanic/FilterValues#05
+=== RUN   TestOptionPanic/FilterValues#06
+=== RUN   TestOptionPanic/FilterValues#07
+=== RUN   TestOptionPanic/FilterValues#08
+--- PASS: TestOptionPanic (0.00s)
+    --- PASS: TestOptionPanic/AllowUnexported (0.00s)
+    --- PASS: TestOptionPanic/AllowUnexported#01 (0.00s)
+    --- PASS: TestOptionPanic/AllowUnexported#02 (0.00s)
+    --- PASS: TestOptionPanic/AllowUnexported#03 (0.00s)
+    --- PASS: TestOptionPanic/AllowUnexported#04 (0.00s)
+    --- PASS: TestOptionPanic/Comparer (0.00s)
+    --- PASS: TestOptionPanic/Comparer#01 (0.00s)
+    --- PASS: TestOptionPanic/Comparer#02 (0.00s)
+    --- PASS: TestOptionPanic/Comparer#03 (0.00s)
+    --- PASS: TestOptionPanic/Comparer#04 (0.00s)
+    --- PASS: TestOptionPanic/Comparer#05 (0.00s)
+    --- PASS: TestOptionPanic/Transformer (0.00s)
+    --- PASS: TestOptionPanic/Transformer#01 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#02 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#03 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#04 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#05 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#06 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#07 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#08 (0.00s)
+    --- PASS: TestOptionPanic/Transformer#09 (0.00s)
+    --- PASS: TestOptionPanic/FilterPath (0.00s)
+    --- PASS: TestOptionPanic/FilterPath#01 (0.00s)
+    --- PASS: TestOptionPanic/FilterPath#02 (0.00s)
+    --- PASS: TestOptionPanic/FilterPath#03 (0.00s)
+    --- PASS: TestOptionPanic/FilterPath#04 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#01 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#02 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#03 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#04 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#05 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#06 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#07 (0.00s)
+    --- PASS: TestOptionPanic/FilterValues#08 (0.00s)
+=== RUN   TestDiff
+=== RUN   TestDiff/Comparer/Nil
+=== PAUSE TestDiff/Comparer/Nil
+=== RUN   TestDiff/Comparer/Integer
+=== PAUSE TestDiff/Comparer/Integer
+=== RUN   TestDiff/Comparer/UnfilteredIgnore
+=== PAUSE TestDiff/Comparer/UnfilteredIgnore
+=== RUN   TestDiff/Comparer/UnfilteredCompare
+=== PAUSE TestDiff/Comparer/UnfilteredCompare
+=== RUN   TestDiff/Comparer/UnfilteredTransform
+=== PAUSE TestDiff/Comparer/UnfilteredTransform
+=== RUN   TestDiff/Comparer/AmbiguousOptions
+=== PAUSE TestDiff/Comparer/AmbiguousOptions
+=== RUN   TestDiff/Comparer/IgnorePrecedence
+=== PAUSE TestDiff/Comparer/IgnorePrecedence
+=== RUN   TestDiff/Comparer/UnknownOption
+=== PAUSE TestDiff/Comparer/UnknownOption
+=== RUN   TestDiff/Comparer/StructEqual
+=== PAUSE TestDiff/Comparer/StructEqual
+=== RUN   TestDiff/Comparer/StructInequal
+=== PAUSE TestDiff/Comparer/StructInequal
+=== RUN   TestDiff/Comparer/StructUnexported
+=== PAUSE TestDiff/Comparer/StructUnexported
+=== RUN   TestDiff/Comparer/PointerStructEqual
+=== PAUSE TestDiff/Comparer/PointerStructEqual
+=== RUN   TestDiff/Comparer/PointerStructInequal
+=== PAUSE TestDiff/Comparer/PointerStructInequal
+=== RUN   TestDiff/Comparer/PointerStructTrueComparer
+=== PAUSE TestDiff/Comparer/PointerStructTrueComparer
+=== RUN   TestDiff/Comparer/PointerStructNonNilComparer
+=== PAUSE TestDiff/Comparer/PointerStructNonNilComparer
+=== RUN   TestDiff/Comparer/StructNestedPointerEqual
+=== PAUSE TestDiff/Comparer/StructNestedPointerEqual
+=== RUN   TestDiff/Comparer/StructNestedPointerInequal
+=== PAUSE TestDiff/Comparer/StructNestedPointerInequal
+=== RUN   TestDiff/Comparer/StructNestedPointerTrueComparer
+=== PAUSE TestDiff/Comparer/StructNestedPointerTrueComparer
+=== RUN   TestDiff/Comparer/StructNestedValueUnexportedPanic1
+=== PAUSE TestDiff/Comparer/StructNestedValueUnexportedPanic1
+=== RUN   TestDiff/Comparer/StructNestedValueUnexportedPanic2
+=== PAUSE TestDiff/Comparer/StructNestedValueUnexportedPanic2
+=== RUN   TestDiff/Comparer/StructNestedValueEqual
+=== PAUSE TestDiff/Comparer/StructNestedValueEqual
+=== RUN   TestDiff/Comparer/RegexpUnexportedPanic
+=== PAUSE TestDiff/Comparer/RegexpUnexportedPanic
+=== RUN   TestDiff/Comparer/RegexpEqual
+=== PAUSE TestDiff/Comparer/RegexpEqual
+=== RUN   TestDiff/Comparer/RegexpInequal
+=== PAUSE TestDiff/Comparer/RegexpInequal
+=== RUN   TestDiff/Comparer/TriplePointerEqual
+=== PAUSE TestDiff/Comparer/TriplePointerEqual
+=== RUN   TestDiff/Comparer/TriplePointerInequal
+=== PAUSE TestDiff/Comparer/TriplePointerInequal
+=== RUN   TestDiff/Comparer/SliceWithDifferingCapacity
+=== PAUSE TestDiff/Comparer/SliceWithDifferingCapacity
+=== RUN   TestDiff/Comparer/StringerEqual
+=== PAUSE TestDiff/Comparer/StringerEqual
+=== RUN   TestDiff/Comparer/StringerInequal
+=== PAUSE TestDiff/Comparer/StringerInequal
+=== RUN   TestDiff/Comparer/DifferingHash
+=== PAUSE TestDiff/Comparer/DifferingHash
+=== RUN   TestDiff/Comparer/NilStringer
+=== PAUSE TestDiff/Comparer/NilStringer
+=== RUN   TestDiff/Comparer/TarHeaders
+=== PAUSE TestDiff/Comparer/TarHeaders
+=== RUN   TestDiff/Comparer/NonDeterministicComparer
+=== PAUSE TestDiff/Comparer/NonDeterministicComparer
+=== RUN   TestDiff/Comparer/NonDeterministicFilter
+=== PAUSE TestDiff/Comparer/NonDeterministicFilter
+=== RUN   TestDiff/Comparer/AssymetricComparer
+=== PAUSE TestDiff/Comparer/AssymetricComparer
+=== RUN   TestDiff/Comparer/NonDeterministicTransformer
+=== PAUSE TestDiff/Comparer/NonDeterministicTransformer
+=== RUN   TestDiff/Comparer/IrreflexiveComparison
+=== PAUSE TestDiff/Comparer/IrreflexiveComparison
+=== RUN   TestDiff/Comparer/StringerMapKey
+=== PAUSE TestDiff/Comparer/StringerMapKey
+=== RUN   TestDiff/Comparer/StringerBacktick
+=== PAUSE TestDiff/Comparer/StringerBacktick
+=== RUN   TestDiff/Comparer/AvoidPanicAssignableConverter
+=== PAUSE TestDiff/Comparer/AvoidPanicAssignableConverter
+=== RUN   TestDiff/Comparer/AvoidPanicAssignableTransformer
+=== PAUSE TestDiff/Comparer/AvoidPanicAssignableTransformer
+=== RUN   TestDiff/Comparer/AvoidPanicAssignableFilter
+=== PAUSE TestDiff/Comparer/AvoidPanicAssignableFilter
+=== RUN   TestDiff/Comparer/DynamicMap
+=== PAUSE TestDiff/Comparer/DynamicMap
+=== RUN   TestDiff/Comparer/MapKeyPointer
+=== PAUSE TestDiff/Comparer/MapKeyPointer
+=== RUN   TestDiff/Comparer/IgnoreSliceElements
+=== PAUSE TestDiff/Comparer/IgnoreSliceElements
+=== RUN   TestDiff/Comparer/IgnoreMapEntries
+=== PAUSE TestDiff/Comparer/IgnoreMapEntries
+=== RUN   TestDiff/Comparer/PanicUnexportedNamed
+=== PAUSE TestDiff/Comparer/PanicUnexportedNamed
+=== RUN   TestDiff/Comparer/PanicUnexportedUnnamed
+=== PAUSE TestDiff/Comparer/PanicUnexportedUnnamed
+=== RUN   TestDiff/Comparer/UnaddressableStruct
+=== PAUSE TestDiff/Comparer/UnaddressableStruct
+=== RUN   TestDiff/Comparer/ErrorPanic
+=== PAUSE TestDiff/Comparer/ErrorPanic
+=== RUN   TestDiff/Comparer/ErrorEqual
+=== PAUSE TestDiff/Comparer/ErrorEqual
+=== RUN   TestDiff/Transformer/Uints
+=== PAUSE TestDiff/Transformer/Uints
+=== RUN   TestDiff/Transformer/Ambiguous
+=== PAUSE TestDiff/Transformer/Ambiguous
+=== RUN   TestDiff/Transformer/Filtered
+=== PAUSE TestDiff/Transformer/Filtered
+=== RUN   TestDiff/Transformer/DisjointOutput
+=== PAUSE TestDiff/Transformer/DisjointOutput
+=== RUN   TestDiff/Transformer/JSON
+=== PAUSE TestDiff/Transformer/JSON
+=== RUN   TestDiff/Transformer/AcyclicString
+=== PAUSE TestDiff/Transformer/AcyclicString
+=== RUN   TestDiff/Transformer/CyclicString
+=== PAUSE TestDiff/Transformer/CyclicString
+=== RUN   TestDiff/Transformer/CyclicComplex
+=== PAUSE TestDiff/Transformer/CyclicComplex
+=== RUN   TestDiff/Reporter/PanicStringer
+=== PAUSE TestDiff/Reporter/PanicStringer
+=== RUN   TestDiff/Reporter/PanicError
+=== PAUSE TestDiff/Reporter/PanicError
+=== RUN   TestDiff/Reporter/AmbiguousType
+=== PAUSE TestDiff/Reporter/AmbiguousType
+=== RUN   TestDiff/Reporter/AmbiguousPointer
+=== PAUSE TestDiff/Reporter/AmbiguousPointer
+=== RUN   TestDiff/Reporter/AmbiguousPointerStruct
+=== PAUSE TestDiff/Reporter/AmbiguousPointerStruct
+=== RUN   TestDiff/Reporter/AmbiguousPointerSlice
+=== PAUSE TestDiff/Reporter/AmbiguousPointerSlice
+=== RUN   TestDiff/Reporter/AmbiguousPointerMap
+=== PAUSE TestDiff/Reporter/AmbiguousPointerMap
+=== RUN   TestDiff/Reporter/AmbiguousStringer
+=== PAUSE TestDiff/Reporter/AmbiguousStringer
+=== RUN   TestDiff/Reporter/AmbiguousStringerStruct
+=== PAUSE TestDiff/Reporter/AmbiguousStringerStruct
+=== RUN   TestDiff/Reporter/AmbiguousStringerSlice
+=== PAUSE TestDiff/Reporter/AmbiguousStringerSlice
+=== RUN   TestDiff/Reporter/AmbiguousStringerMap
+=== PAUSE TestDiff/Reporter/AmbiguousStringerMap
+=== RUN   TestDiff/Reporter/AmbiguousSliceHeader
+=== PAUSE TestDiff/Reporter/AmbiguousSliceHeader
+=== RUN   TestDiff/Reporter/AmbiguousStringerMapKey
+=== PAUSE TestDiff/Reporter/AmbiguousStringerMapKey
+=== RUN   TestDiff/Reporter/NonAmbiguousStringerMapKey
+=== PAUSE TestDiff/Reporter/NonAmbiguousStringerMapKey
+=== RUN   TestDiff/Reporter/InvalidUTF8
+=== PAUSE TestDiff/Reporter/InvalidUTF8
+=== RUN   TestDiff/Reporter/UnbatchedSlice
+=== PAUSE TestDiff/Reporter/UnbatchedSlice
+=== RUN   TestDiff/Reporter/BatchedSlice
+=== PAUSE TestDiff/Reporter/BatchedSlice
+=== RUN   TestDiff/Reporter/BatchedWithComparer
+=== PAUSE TestDiff/Reporter/BatchedWithComparer
+=== RUN   TestDiff/Reporter/BatchedLong
+=== PAUSE TestDiff/Reporter/BatchedLong
+=== RUN   TestDiff/Reporter/BatchedNamedAndUnnamed
+=== PAUSE TestDiff/Reporter/BatchedNamedAndUnnamed
+=== RUN   TestDiff/Reporter/BinaryHexdump
+=== PAUSE TestDiff/Reporter/BinaryHexdump
+=== RUN   TestDiff/Reporter/StringHexdump
+=== PAUSE TestDiff/Reporter/StringHexdump
+=== RUN   TestDiff/Reporter/BinaryString
+=== PAUSE TestDiff/Reporter/BinaryString
+=== RUN   TestDiff/Reporter/TripleQuote
+=== PAUSE TestDiff/Reporter/TripleQuote
+=== RUN   TestDiff/Reporter/TripleQuoteSlice
+=== PAUSE TestDiff/Reporter/TripleQuoteSlice
+=== RUN   TestDiff/Reporter/TripleQuoteNamedTypes
+=== PAUSE TestDiff/Reporter/TripleQuoteNamedTypes
+=== RUN   TestDiff/Reporter/TripleQuoteSliceNamedTypes
+=== PAUSE TestDiff/Reporter/TripleQuoteSliceNamedTypes
+=== RUN   TestDiff/Reporter/TripleQuoteEndlines
+=== PAUSE TestDiff/Reporter/TripleQuoteEndlines
+=== RUN   TestDiff/Reporter/AvoidTripleQuoteAmbiguousQuotes
+=== PAUSE TestDiff/Reporter/AvoidTripleQuoteAmbiguousQuotes
+=== RUN   TestDiff/Reporter/AvoidTripleQuoteAmbiguousEllipsis
+=== PAUSE TestDiff/Reporter/AvoidTripleQuoteAmbiguousEllipsis
+=== RUN   TestDiff/Reporter/AvoidTripleQuoteNonPrintable
+=== PAUSE TestDiff/Reporter/AvoidTripleQuoteNonPrintable
+=== RUN   TestDiff/Reporter/AvoidTripleQuoteIdenticalWhitespace
+=== PAUSE TestDiff/Reporter/AvoidTripleQuoteIdenticalWhitespace
+=== RUN   TestDiff/Reporter/TripleQuoteStringer
+=== PAUSE TestDiff/Reporter/TripleQuoteStringer
+=== RUN   TestDiff/Reporter/LimitMaximumBytesDiffs
+=== PAUSE TestDiff/Reporter/LimitMaximumBytesDiffs
+=== RUN   TestDiff/Reporter/LimitMaximumStringDiffs
+=== PAUSE TestDiff/Reporter/LimitMaximumStringDiffs
+=== RUN   TestDiff/Reporter/LimitMaximumSliceDiffs
+=== PAUSE TestDiff/Reporter/LimitMaximumSliceDiffs
+=== RUN   TestDiff/Reporter/MultilineString
+=== PAUSE TestDiff/Reporter/MultilineString
+=== RUN   TestDiff/Reporter/Slices
+=== PAUSE TestDiff/Reporter/Slices
+=== RUN   TestDiff/Reporter/EmptySlices
+=== PAUSE TestDiff/Reporter/EmptySlices
+=== RUN   TestDiff/Reporter/LargeMapKey
+=== PAUSE TestDiff/Reporter/LargeMapKey
+=== RUN   TestDiff/Reporter/LargeStringInInterface
+=== PAUSE TestDiff/Reporter/LargeStringInInterface
+=== RUN   TestDiff/Reporter/LargeBytesInInterface
+=== PAUSE TestDiff/Reporter/LargeBytesInInterface
+=== RUN   TestDiff/Reporter/LargeStandaloneString
+=== PAUSE TestDiff/Reporter/LargeStandaloneString
+=== RUN   TestDiff/Reporter/SurroundingEqualElements
+=== PAUSE TestDiff/Reporter/SurroundingEqualElements
+=== RUN   TestDiff/Reporter/MostlyTextString
+=== PAUSE TestDiff/Reporter/MostlyTextString
+=== RUN   TestDiff/Reporter/AllLinesDiffer
+=== PAUSE TestDiff/Reporter/AllLinesDiffer
+=== RUN   TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructA/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructA/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructA/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructA/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructA/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructA/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructB/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructB/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructB/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructB/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructB/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructB/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructC/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructC/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructC/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructC/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructC/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructC/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructD/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructD/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructD/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructD/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructD/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructD/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported3
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported3
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructE/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructE/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported3
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported3
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructF/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructF/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructG/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructG/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructG/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructG/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructG/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructG/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/EqualNil
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/EqualNil
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructH/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructH/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/Ignored1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/Ignored1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/Ignored2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/Ignored2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported3
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported3
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructI/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructI/Inequal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported1
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported1
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported2
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported2
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/Ignored
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/Ignored
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported3
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported3
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/Equal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/Equal
+=== RUN   TestDiff/EmbeddedStruct/ParentStructJ/Inequal
+=== PAUSE TestDiff/EmbeddedStruct/ParentStructJ/Inequal
+=== RUN   TestDiff/EqualMethod/StructA/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructA/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructA/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructA/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructB/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructB/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructB/ValueAddrEqual
+=== PAUSE TestDiff/EqualMethod/StructB/ValueAddrEqual
+=== RUN   TestDiff/EqualMethod/StructB/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructB/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructC/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructC/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructC/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructC/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructD/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructD/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructD/ValueAddrEqual
+=== PAUSE TestDiff/EqualMethod/StructD/ValueAddrEqual
+=== RUN   TestDiff/EqualMethod/StructD/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructD/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructE/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructE/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructE/ValueAddrEqual
+=== PAUSE TestDiff/EqualMethod/StructE/ValueAddrEqual
+=== RUN   TestDiff/EqualMethod/StructE/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructE/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructF/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructF/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructF/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructF/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructA1/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructA1/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructA1/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructA1/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructA1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructA1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructA1/PointerInequal
+=== PAUSE TestDiff/EqualMethod/StructA1/PointerInequal
+=== RUN   TestDiff/EqualMethod/StructB1/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructB1/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructB1/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructB1/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructB1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructB1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructB1/PointerInequal
+=== PAUSE TestDiff/EqualMethod/StructB1/PointerInequal
+=== RUN   TestDiff/EqualMethod/StructC1/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructC1/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructC1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructC1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructD1/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructD1/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructD1/PointerAddrEqual
+=== PAUSE TestDiff/EqualMethod/StructD1/PointerAddrEqual
+=== RUN   TestDiff/EqualMethod/StructD1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructD1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructE1/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructE1/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructE1/ValueAddrEqual
+=== PAUSE TestDiff/EqualMethod/StructE1/ValueAddrEqual
+=== RUN   TestDiff/EqualMethod/StructE1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructE1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructF1/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructF1/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructF1/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructF1/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructA2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructA2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructA2/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructA2/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructA2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructA2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructA2/PointerInequal
+=== PAUSE TestDiff/EqualMethod/StructA2/PointerInequal
+=== RUN   TestDiff/EqualMethod/StructB2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructB2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructB2/ValueInequal
+=== PAUSE TestDiff/EqualMethod/StructB2/ValueInequal
+=== RUN   TestDiff/EqualMethod/StructB2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructB2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructB2/PointerInequal
+=== PAUSE TestDiff/EqualMethod/StructB2/PointerInequal
+=== RUN   TestDiff/EqualMethod/StructC2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructC2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructC2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructC2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructD2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructD2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructD2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructD2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructE2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructE2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructE2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructE2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructF2/ValueEqual
+=== PAUSE TestDiff/EqualMethod/StructF2/ValueEqual
+=== RUN   TestDiff/EqualMethod/StructF2/PointerEqual
+=== PAUSE TestDiff/EqualMethod/StructF2/PointerEqual
+=== RUN   TestDiff/EqualMethod/StructNo/Inequal
+=== PAUSE TestDiff/EqualMethod/StructNo/Inequal
+=== RUN   TestDiff/EqualMethod/AssignA/Equal
+=== PAUSE TestDiff/EqualMethod/AssignA/Equal
+=== RUN   TestDiff/EqualMethod/AssignB/Equal
+=== PAUSE TestDiff/EqualMethod/AssignB/Equal
+=== RUN   TestDiff/EqualMethod/AssignC/Equal
+=== PAUSE TestDiff/EqualMethod/AssignC/Equal
+=== RUN   TestDiff/EqualMethod/AssignD/Equal
+=== PAUSE TestDiff/EqualMethod/AssignD/Equal
+=== RUN   TestDiff/Cycle/PointersEqual
+=== PAUSE TestDiff/Cycle/PointersEqual
+=== RUN   TestDiff/Cycle/PointersInequal
+=== PAUSE TestDiff/Cycle/PointersInequal
+=== RUN   TestDiff/Cycle/SlicesEqual
+=== PAUSE TestDiff/Cycle/SlicesEqual
+=== RUN   TestDiff/Cycle/SlicesInequal
+=== PAUSE TestDiff/Cycle/SlicesInequal
+=== RUN   TestDiff/Cycle/MapsEqual
+=== PAUSE TestDiff/Cycle/MapsEqual
+=== RUN   TestDiff/Cycle/MapsInequal
+=== PAUSE TestDiff/Cycle/MapsInequal
+=== RUN   TestDiff/Cycle/GraphEqual
+=== PAUSE TestDiff/Cycle/GraphEqual
+=== RUN   TestDiff/Cycle/GraphInequalZeroed
+=== PAUSE TestDiff/Cycle/GraphInequalZeroed
+=== RUN   TestDiff/Cycle/GraphInequalStruct
+=== PAUSE TestDiff/Cycle/GraphInequalStruct
+=== RUN   TestDiff/Project1/PanicUnexported
+=== PAUSE TestDiff/Project1/PanicUnexported
+=== RUN   TestDiff/Project1/ProtoEqual
+=== PAUSE TestDiff/Project1/ProtoEqual
+=== RUN   TestDiff/Project1/ProtoInequal
+=== PAUSE TestDiff/Project1/ProtoInequal
+=== RUN   TestDiff/Project1/Equal
+=== PAUSE TestDiff/Project1/Equal
+=== RUN   TestDiff/Project1/Inequal
+=== PAUSE TestDiff/Project1/Inequal
+=== RUN   TestDiff/Project2/PanicUnexported
+=== PAUSE TestDiff/Project2/PanicUnexported
+=== RUN   TestDiff/Project2/Equal
+=== PAUSE TestDiff/Project2/Equal
+=== RUN   TestDiff/Project2/InequalOrder
+=== PAUSE TestDiff/Project2/InequalOrder
+=== RUN   TestDiff/Project2/EqualOrder
+=== PAUSE TestDiff/Project2/EqualOrder
+=== RUN   TestDiff/Project2/Inequal
+=== PAUSE TestDiff/Project2/Inequal
+=== RUN   TestDiff/Project3/PanicUnexported1
+=== PAUSE TestDiff/Project3/PanicUnexported1
+=== RUN   TestDiff/Project3/PanicUnexported2
+=== PAUSE TestDiff/Project3/PanicUnexported2
+=== RUN   TestDiff/Project3/Equal
+=== PAUSE TestDiff/Project3/Equal
+=== RUN   TestDiff/Project3/Inequal
+=== PAUSE TestDiff/Project3/Inequal
+=== RUN   TestDiff/Project4/PanicUnexported1
+=== PAUSE TestDiff/Project4/PanicUnexported1
+=== RUN   TestDiff/Project4/PanicUnexported2
+=== PAUSE TestDiff/Project4/PanicUnexported2
+=== RUN   TestDiff/Project4/Equal
+=== PAUSE TestDiff/Project4/Equal
+=== RUN   TestDiff/Project4/Inequal
+=== PAUSE TestDiff/Project4/Inequal
+=== CONT  TestDiff/Comparer/Nil
+=== CONT  TestDiff/Project4/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructD/Ignored
+=== CONT  TestDiff/Reporter/AmbiguousType
+=== CONT  TestDiff/EqualMethod/StructB1/ValueInequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/Ignored2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/Ignored1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructC/Inequal
+=== CONT  TestDiff/EqualMethod/StructB1/ValueEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructC/Equal
+=== CONT  TestDiff/EqualMethod/StructF/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/EqualNil
+=== CONT  TestDiff/EqualMethod/StructA1/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructA1/PointerInequal
+=== CONT  TestDiff/EqualMethod/StructA1/ValueEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported1
+=== CONT  TestDiff/EqualMethod/StructNo/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructG/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported2
+=== CONT  TestDiff/EqualMethod/StructF2/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructF/ValueInequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructC/Ignored
+=== CONT  TestDiff/EqualMethod/StructE/PointerEqual
+=== CONT  TestDiff/Project2/PanicUnexported
+=== CONT  TestDiff/EqualMethod/StructC/ValueEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/Inequal
+=== CONT  TestDiff/EqualMethod/AssignA/Equal
+=== CONT  TestDiff/EqualMethod/StructB/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/Equal
+=== CONT  TestDiff/EqualMethod/StructB/ValueAddrEqual
+=== CONT  TestDiff/EqualMethod/StructB/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructA/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported3
+=== CONT  TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported2
+=== CONT  TestDiff/EqualMethod/StructA/ValueEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported3
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructD/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructD/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported2
+=== CONT  TestDiff/Project4/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructB/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructB/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructA/Inequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported3
+=== CONT  TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructA/Ignored
+=== CONT  TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported1
+=== CONT  TestDiff/Reporter/SurroundingEqualElements
+=== CONT  TestDiff/Reporter/AllLinesDiffer
+=== CONT  TestDiff/Reporter/LargeStandaloneString
+=== CONT  TestDiff/Project2/InequalOrder
+=== CONT  TestDiff/Reporter/LargeBytesInInterface
+=== CONT  TestDiff/Reporter/LargeStringInInterface
+=== CONT  TestDiff/Reporter/LargeMapKey
+=== CONT  TestDiff/Reporter/EmptySlices
+=== CONT  TestDiff/Reporter/Slices
+=== CONT  TestDiff/Reporter/MultilineString
+=== CONT  TestDiff/Reporter/LimitMaximumSliceDiffs
+=== CONT  TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported2
+=== CONT  TestDiff/Reporter/LimitMaximumStringDiffs
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported3
+=== CONT  TestDiff/Reporter/LimitMaximumBytesDiffs
+=== CONT  TestDiff/Project3/Inequal
+=== CONT  TestDiff/Project3/Equal
+=== CONT  TestDiff/Project3/PanicUnexported2
+=== CONT  TestDiff/Project3/PanicUnexported1
+=== CONT  TestDiff/Project2/Inequal
+=== CONT  TestDiff/Project2/EqualOrder
+=== CONT  TestDiff/Project2/Equal
+=== CONT  TestDiff/EqualMethod/StructE/ValueAddrEqual
+=== CONT  TestDiff/EqualMethod/StructE/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructD/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructG/Equal
+=== CONT  TestDiff/EqualMethod/StructD/ValueAddrEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported2
+=== CONT  TestDiff/EqualMethod/StructD/ValueInequal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructG/Ignored
+=== CONT  TestDiff/EqualMethod/StructC/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported1
+=== CONT  TestDiff/EqualMethod/StructA1/ValueInequal
+=== CONT  TestDiff/Project4/Equal
+=== CONT  TestDiff/EmbeddedStruct/ParentStructJ/Equal
+=== CONT  TestDiff/Project4/PanicUnexported2
+=== CONT  TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported1
+=== CONT  TestDiff/EmbeddedStruct/ParentStructB/Inequal
+=== CONT  TestDiff/Reporter/AvoidTripleQuoteNonPrintable
+=== CONT  TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported2
+=== CONT  TestDiff/Reporter/TripleQuoteStringer
+=== CONT  TestDiff/Reporter/AvoidTripleQuoteIdenticalWhitespace
+=== CONT  TestDiff/EqualMethod/StructA2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructF2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructE2/PointerEqual
+=== CONT  TestDiff/EmbeddedStruct/ParentStructA/Equal
+=== CONT  TestDiff/Reporter/MostlyTextString
+=== CONT  TestDiff/EqualMethod/StructE2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructD2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructC2/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructC2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructB2/PointerInequal
+=== CONT  TestDiff/EqualMethod/StructB2/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructB2/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructB2/ValueEqual
+=== CONT  TestDiff/EqualMethod/StructA2/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructA2/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructD1/PointerAddrEqual
+=== CONT  TestDiff/EqualMethod/StructF1/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructF1/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructE1/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructE1/ValueAddrEqual
+=== CONT  TestDiff/EqualMethod/StructE1/ValueInequal
+=== CONT  TestDiff/EqualMethod/StructD1/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructB1/PointerInequal
+=== CONT  TestDiff/EqualMethod/StructC1/ValueEqual
+=== CONT  TestDiff/Reporter/PanicError
+=== CONT  TestDiff/Reporter/PanicStringer
+=== CONT  TestDiff/EqualMethod/StructA2/PointerInequal
+=== CONT  TestDiff/Transformer/AcyclicString
+=== CONT  TestDiff/Transformer/DisjointOutput
+=== CONT  TestDiff/Transformer/Ambiguous
+=== CONT  TestDiff/Transformer/Uints
+=== CONT  TestDiff/Comparer/ErrorEqual
+=== CONT  TestDiff/Comparer/UnaddressableStruct
+=== CONT  TestDiff/Comparer/PanicUnexportedUnnamed
+=== CONT  TestDiff/Comparer/PanicUnexportedNamed
+=== CONT  TestDiff/Comparer/IgnoreMapEntries
+=== CONT  TestDiff/Comparer/DynamicMap
+=== CONT  TestDiff/Comparer/AvoidPanicAssignableFilter
+=== CONT  TestDiff/Comparer/AvoidPanicAssignableTransformer
+=== CONT  TestDiff/Comparer/AvoidPanicAssignableConverter
+=== CONT  TestDiff/Comparer/StringerBacktick
+=== CONT  TestDiff/Comparer/NonDeterministicTransformer
+=== CONT  TestDiff/Comparer/IrreflexiveComparison
+=== CONT  TestDiff/Comparer/AssymetricComparer
+=== CONT  TestDiff/Comparer/NonDeterministicFilter
+=== CONT  TestDiff/Comparer/NonDeterministicComparer
+=== CONT  TestDiff/Reporter/BatchedSlice
+=== CONT  TestDiff/Reporter/AvoidTripleQuoteAmbiguousEllipsis
+=== CONT  TestDiff/Reporter/AvoidTripleQuoteAmbiguousQuotes
+=== CONT  TestDiff/Reporter/TripleQuoteEndlines
+=== CONT  TestDiff/Reporter/TripleQuoteNamedTypes
+=== CONT  TestDiff/Reporter/TripleQuote
+=== CONT  TestDiff/Reporter/StringHexdump
+=== CONT  TestDiff/Reporter/BatchedNamedAndUnnamed
+=== CONT  TestDiff/Reporter/BatchedLong
+=== CONT  TestDiff/Reporter/BatchedWithComparer
+=== CONT  TestDiff/Cycle/MapsInequal
+=== CONT  TestDiff/Project1/Inequal
+=== CONT  TestDiff/Project1/Equal
+=== CONT  TestDiff/Project1/ProtoEqual
+=== CONT  TestDiff/Project1/PanicUnexported
+=== CONT  TestDiff/Cycle/GraphInequalStruct
+=== CONT  TestDiff/Cycle/GraphInequalZeroed
+=== CONT  TestDiff/Cycle/GraphEqual
+=== CONT  TestDiff/Cycle/PointersInequal
+=== CONT  TestDiff/Cycle/MapsEqual
+=== CONT  TestDiff/Cycle/SlicesInequal
+=== CONT  TestDiff/Comparer/StructNestedPointerInequal
+=== CONT  TestDiff/Comparer/NilStringer
+=== CONT  TestDiff/Comparer/DifferingHash
+=== CONT  TestDiff/Comparer/StringerEqual
+=== CONT  TestDiff/Comparer/SliceWithDifferingCapacity
+=== CONT  TestDiff/Comparer/TriplePointerInequal
+=== CONT  TestDiff/Comparer/TriplePointerEqual
+=== CONT  TestDiff/Comparer/RegexpInequal
+=== CONT  TestDiff/Comparer/RegexpUnexportedPanic
+=== CONT  TestDiff/Comparer/StructNestedValueEqual
+=== CONT  TestDiff/Comparer/StructNestedValueUnexportedPanic2
+=== CONT  TestDiff/Comparer/StructNestedValueUnexportedPanic1
+=== CONT  TestDiff/Comparer/StructNestedPointerTrueComparer
+=== CONT  TestDiff/EqualMethod/StructC1/PointerEqual
+=== CONT  TestDiff/Cycle/SlicesEqual
+=== CONT  TestDiff/Reporter/TripleQuoteSliceNamedTypes
+=== CONT  TestDiff/Comparer/StructEqual
+=== CONT  TestDiff/Comparer/StructNestedPointerEqual
+=== CONT  TestDiff/Comparer/PointerStructInequal
+=== CONT  TestDiff/Comparer/PointerStructEqual
+=== CONT  TestDiff/Comparer/StructUnexported
+=== CONT  TestDiff/Comparer/RegexpEqual
+=== CONT  TestDiff/Comparer/StringerInequal
+=== CONT  TestDiff/Reporter/BinaryHexdump
+=== CONT  TestDiff/Project1/ProtoInequal
+=== CONT  TestDiff/Reporter/BinaryString
+=== CONT  TestDiff/Reporter/TripleQuoteSlice
+=== CONT  TestDiff/Comparer/StringerMapKey
+=== CONT  TestDiff/Transformer/JSON
+=== CONT  TestDiff/Comparer/TarHeaders
+=== CONT  TestDiff/Transformer/Filtered
+=== CONT  TestDiff/Transformer/CyclicComplex
+=== CONT  TestDiff/Comparer/IgnoreSliceElements
+=== CONT  TestDiff/Comparer/ErrorPanic
+=== CONT  TestDiff/Transformer/CyclicString
+=== CONT  TestDiff/Comparer/MapKeyPointer
+=== CONT  TestDiff/EqualMethod/StructD1/ValueInequal
+=== CONT  TestDiff/Comparer/PointerStructNonNilComparer
+=== CONT  TestDiff/Comparer/PointerStructTrueComparer
+=== CONT  TestDiff/Cycle/PointersEqual
+=== CONT  TestDiff/Comparer/UnfilteredCompare
+=== CONT  TestDiff/Reporter/UnbatchedSlice
+=== CONT  TestDiff/Reporter/InvalidUTF8
+=== CONT  TestDiff/Reporter/NonAmbiguousStringerMapKey
+=== CONT  TestDiff/Reporter/AmbiguousStringerMapKey
+=== CONT  TestDiff/Reporter/AmbiguousSliceHeader
+=== CONT  TestDiff/Reporter/AmbiguousStringerMap
+=== CONT  TestDiff/Reporter/AmbiguousStringerSlice
+=== CONT  TestDiff/Reporter/AmbiguousStringerStruct
+=== CONT  TestDiff/Reporter/AmbiguousPointerMap
+=== CONT  TestDiff/Reporter/AmbiguousPointerSlice
+=== CONT  TestDiff/Reporter/AmbiguousPointerStruct
+=== CONT  TestDiff/Reporter/AmbiguousPointer
+=== CONT  TestDiff/Comparer/UnfilteredTransform
+=== CONT  TestDiff/Comparer/UnknownOption
+=== CONT  TestDiff/Comparer/IgnorePrecedence
+=== CONT  TestDiff/Comparer/AmbiguousOptions
+=== CONT  TestDiff/Comparer/Integer
+=== CONT  TestDiff/Comparer/StructInequal
+=== CONT  TestDiff/EqualMethod/AssignC/Equal
+=== CONT  TestDiff/EqualMethod/AssignB/Equal
+=== CONT  TestDiff/Comparer/UnfilteredIgnore
+=== CONT  TestDiff/Reporter/AmbiguousStringer
+=== CONT  TestDiff/EqualMethod/StructD2/PointerEqual
+=== CONT  TestDiff/EqualMethod/StructB1/PointerEqual
+=== CONT  TestDiff/EqualMethod/AssignD/Equal
+--- PASS: TestDiff (0.00s)
+    --- PASS: TestDiff/Comparer/Nil (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructD/Ignored (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousType (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/Ignored2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/Ignored1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructC/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB1/ValueEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/EqualNil (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructC/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/Ignored (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB1/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA1/PointerEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructNo/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF/PointerEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructG/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructC/Ignored (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF2/PointerEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructC/ValueEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/AssignA/Equal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB/PointerEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB/ValueAddrEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA1/PointerInequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported3 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA/ValueEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/Ignored (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF/ValueInequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructH/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/Project2/PanicUnexported (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE/PointerEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/Ignored (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA1/ValueEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/Ignored (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/PanicUnexported3 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/Equal (0.00s)
+    --- PASS: TestDiff/Project4/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructD/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA/PointerEqual (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructD/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructD/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/Inequal (0.00s)
+    --- PASS: TestDiff/Project4/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructB/Equal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructB/Ignored (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructA/Inequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructI/PanicUnexported3 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructA/Ignored (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructA/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructC/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/Reporter/AllLinesDiffer (0.00s)
+    --- PASS: TestDiff/Reporter/SurroundingEqualElements (0.00s)
+    --- PASS: TestDiff/Project2/InequalOrder (0.00s)
+    --- PASS: TestDiff/Reporter/LargeStandaloneString (0.00s)
+    --- PASS: TestDiff/Reporter/LargeStringInInterface (0.00s)
+    --- PASS: TestDiff/Reporter/EmptySlices (0.00s)
+    --- PASS: TestDiff/Reporter/Slices (0.00s)
+    --- PASS: TestDiff/Reporter/MultilineString (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructF/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported3 (0.00s)
+    --- PASS: TestDiff/Reporter/LimitMaximumStringDiffs (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructB/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/Project3/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA2/ValueEqual (0.00s)
+    --- PASS: TestDiff/Project3/Equal (0.00s)
+    --- PASS: TestDiff/Reporter/LimitMaximumSliceDiffs (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA1/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD2/ValueEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructC2/PointerEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructC2/ValueEqual (0.00s)
+    --- PASS: TestDiff/Project3/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB2/PointerInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB2/PointerEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB2/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB2/ValueEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA2/PointerEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA2/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD1/PointerAddrEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF1/PointerEqual (0.00s)
+    --- PASS: TestDiff/Project2/Inequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF1/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE1/ValueAddrEqual (0.00s)
+    --- PASS: TestDiff/Reporter/AvoidTripleQuoteNonPrintable (0.00s)
+    --- PASS: TestDiff/Reporter/LargeMapKey (0.01s)
+    --- PASS: TestDiff/EqualMethod/StructD1/PointerEqual (0.00s)
+    --- PASS: TestDiff/Project4/PanicUnexported2 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE/ValueAddrEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE1/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructC1/ValueEqual (0.00s)
+    --- PASS: TestDiff/Project3/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/Reporter/PanicError (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructG/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD/ValueAddrEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructF2/ValueEqual (0.00s)
+    --- PASS: TestDiff/Reporter/PanicStringer (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB1/PointerInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructA2/PointerInequal (0.00s)
+    --- PASS: TestDiff/Project4/Equal (0.00s)
+    --- PASS: TestDiff/Transformer/DisjointOutput (0.00s)
+    --- PASS: TestDiff/Comparer/ErrorEqual (0.00s)
+    --- PASS: TestDiff/Transformer/Ambiguous (0.00s)
+    --- PASS: TestDiff/Comparer/UnaddressableStruct (0.00s)
+    --- PASS: TestDiff/Transformer/Uints (0.00s)
+    --- PASS: TestDiff/Comparer/PanicUnexportedNamed (0.00s)
+    --- PASS: TestDiff/Comparer/PanicUnexportedUnnamed (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructE/PanicUnexported1 (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE1/PointerEqual (0.00s)
+    --- PASS: TestDiff/Comparer/AvoidPanicAssignableFilter (0.00s)
+    --- PASS: TestDiff/Comparer/AvoidPanicAssignableTransformer (0.00s)
+    --- PASS: TestDiff/Comparer/DynamicMap (0.00s)
+    --- PASS: TestDiff/Comparer/IgnoreMapEntries (0.00s)
+    --- PASS: TestDiff/Project2/EqualOrder (0.00s)
+    --- PASS: TestDiff/Comparer/AvoidPanicAssignableConverter (0.00s)
+    --- PASS: TestDiff/Comparer/StringerBacktick (0.00s)
+    --- PASS: TestDiff/Transformer/AcyclicString (0.00s)
+    --- PASS: TestDiff/Comparer/AssymetricComparer (0.00s)
+    --- PASS: TestDiff/Project2/Equal (0.00s)
+    --- PASS: TestDiff/Comparer/NonDeterministicFilter (0.00s)
+    --- PASS: TestDiff/Comparer/NonDeterministicComparer (0.00s)
+    --- PASS: TestDiff/Reporter/AvoidTripleQuoteAmbiguousEllipsis (0.00s)
+    --- PASS: TestDiff/Reporter/AvoidTripleQuoteAmbiguousQuotes (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD/PointerEqual (0.01s)
+    --- PASS: TestDiff/Reporter/BatchedSlice (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructG/Equal (0.01s)
+    --- PASS: TestDiff/Reporter/TripleQuoteEndlines (0.00s)
+    --- PASS: TestDiff/Comparer/NonDeterministicTransformer (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructG/Ignored (0.01s)
+    --- PASS: TestDiff/EqualMethod/StructC/PointerEqual (0.01s)
+    --- PASS: TestDiff/Reporter/TripleQuote (0.00s)
+    --- PASS: TestDiff/Reporter/BatchedLong (0.00s)
+    --- PASS: TestDiff/Reporter/StringHexdump (0.00s)
+    --- PASS: TestDiff/Cycle/MapsInequal (0.00s)
+    --- PASS: TestDiff/Reporter/BatchedWithComparer (0.00s)
+    --- PASS: TestDiff/Comparer/IrreflexiveComparison (0.00s)
+    --- PASS: TestDiff/Reporter/TripleQuoteNamedTypes (0.00s)
+    --- PASS: TestDiff/Reporter/BatchedNamedAndUnnamed (0.00s)
+    --- PASS: TestDiff/Project1/ProtoEqual (0.00s)
+    --- PASS: TestDiff/Project1/PanicUnexported (0.00s)
+    --- PASS: TestDiff/Reporter/TripleQuoteStringer (0.01s)
+    --- PASS: TestDiff/Cycle/GraphEqual (0.00s)
+    --- PASS: TestDiff/Cycle/PointersInequal (0.00s)
+    --- PASS: TestDiff/Cycle/MapsEqual (0.00s)
+    --- PASS: TestDiff/Project1/Equal (0.00s)
+    --- PASS: TestDiff/Cycle/SlicesInequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructJ/Equal (0.01s)
+    --- PASS: TestDiff/Cycle/GraphInequalStruct (0.00s)
+    --- PASS: TestDiff/Comparer/StructNestedPointerInequal (0.00s)
+    --- PASS: TestDiff/Comparer/NilStringer (0.00s)
+    --- PASS: TestDiff/Comparer/StringerEqual (0.00s)
+    --- PASS: TestDiff/Reporter/AvoidTripleQuoteIdenticalWhitespace (0.01s)
+    --- PASS: TestDiff/Comparer/SliceWithDifferingCapacity (0.00s)
+    --- PASS: TestDiff/Comparer/TriplePointerEqual (0.00s)
+    --- PASS: TestDiff/Cycle/GraphInequalZeroed (0.00s)
+    --- PASS: TestDiff/Comparer/DifferingHash (0.00s)
+    --- PASS: TestDiff/Comparer/TriplePointerInequal (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructB/Inequal (0.01s)
+    --- PASS: TestDiff/Comparer/RegexpUnexportedPanic (0.00s)
+    --- PASS: TestDiff/Comparer/StructNestedValueUnexportedPanic2 (0.00s)
+    --- PASS: TestDiff/Comparer/RegexpInequal (0.00s)
+    --- PASS: TestDiff/Comparer/StructEqual (0.00s)
+    --- PASS: TestDiff/Comparer/StructNestedPointerTrueComparer (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD/ValueInequal (0.01s)
+    --- PASS: TestDiff/Comparer/StructNestedValueUnexportedPanic1 (0.00s)
+    --- PASS: TestDiff/Comparer/StructNestedPointerEqual (0.00s)
+    --- PASS: TestDiff/Comparer/StructNestedValueEqual (0.00s)
+    --- PASS: TestDiff/Comparer/StructUnexported (0.00s)
+    --- PASS: TestDiff/Comparer/PointerStructEqual (0.00s)
+    --- PASS: TestDiff/Comparer/PointerStructInequal (0.00s)
+    --- PASS: TestDiff/Comparer/PointerStructNonNilComparer (0.00s)
+    --- PASS: TestDiff/Comparer/StringerMapKey (0.00s)
+    --- PASS: TestDiff/EmbeddedStruct/ParentStructA/Equal (0.01s)
+    --- PASS: TestDiff/Cycle/PointersEqual (0.00s)
+    --- PASS: TestDiff/Comparer/UnfilteredCompare (0.00s)
+    --- PASS: TestDiff/Reporter/LimitMaximumBytesDiffs (0.01s)
+    --- PASS: TestDiff/Reporter/InvalidUTF8 (0.00s)
+    --- PASS: TestDiff/Reporter/NonAmbiguousStringerMapKey (0.00s)
+    --- PASS: TestDiff/Reporter/MostlyTextString (0.01s)
+    --- PASS: TestDiff/Reporter/AmbiguousStringerMapKey (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousSliceHeader (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousStringerMap (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousStringerSlice (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE2/ValueEqual (0.01s)
+    --- PASS: TestDiff/Reporter/UnbatchedSlice (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousStringerStruct (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousPointerMap (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousPointerSlice (0.00s)
+    --- PASS: TestDiff/Comparer/UnfilteredTransform (0.00s)
+    --- PASS: TestDiff/Comparer/UnknownOption (0.00s)
+    --- PASS: TestDiff/Comparer/IgnorePrecedence (0.00s)
+    --- PASS: TestDiff/Comparer/Integer (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousPointerStruct (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousPointer (0.00s)
+    --- PASS: TestDiff/Comparer/UnfilteredIgnore (0.00s)
+    --- PASS: TestDiff/Comparer/StructInequal (0.00s)
+    --- PASS: TestDiff/Comparer/AmbiguousOptions (0.00s)
+    --- PASS: TestDiff/EqualMethod/AssignC/Equal (0.00s)
+    --- PASS: TestDiff/Reporter/AmbiguousStringer (0.00s)
+    --- PASS: TestDiff/EqualMethod/AssignB/Equal (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD2/PointerEqual (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructE2/PointerEqual (0.01s)
+    --- PASS: TestDiff/EqualMethod/StructC1/PointerEqual (0.00s)
+    --- PASS: TestDiff/Cycle/SlicesEqual (0.00s)
+    --- PASS: TestDiff/Reporter/TripleQuoteSliceNamedTypes (0.00s)
+    --- PASS: TestDiff/Comparer/RegexpEqual (0.00s)
+    --- PASS: TestDiff/Comparer/StringerInequal (0.00s)
+    --- PASS: TestDiff/Project1/Inequal (0.00s)
+    --- PASS: TestDiff/Project1/ProtoInequal (0.00s)
+    --- PASS: TestDiff/Reporter/BinaryHexdump (0.00s)
+    --- PASS: TestDiff/Reporter/TripleQuoteSlice (0.00s)
+    --- PASS: TestDiff/Reporter/LargeBytesInInterface (0.01s)
+    --- PASS: TestDiff/Reporter/BinaryString (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructB1/PointerEqual (0.00s)
+    --- PASS: TestDiff/Transformer/Filtered (0.00s)
+    --- PASS: TestDiff/Transformer/JSON (0.00s)
+    --- PASS: TestDiff/Comparer/IgnoreSliceElements (0.00s)
+    --- PASS: TestDiff/Comparer/ErrorPanic (0.00s)
+    --- PASS: TestDiff/Comparer/TarHeaders (0.00s)
+    --- PASS: TestDiff/Comparer/MapKeyPointer (0.00s)
+    --- PASS: TestDiff/EqualMethod/StructD1/ValueInequal (0.00s)
+    --- PASS: TestDiff/EqualMethod/AssignD/Equal (0.00s)
+    --- PASS: TestDiff/Comparer/PointerStructTrueComparer (0.00s)
+    --- PASS: TestDiff/Transformer/CyclicComplex (0.29s)
+    --- PASS: TestDiff/Transformer/CyclicString (0.41s)
+=== RUN   ExampleReporter
+--- PASS: ExampleReporter (0.00s)
+=== RUN   ExampleDiff_testing
+--- PASS: ExampleDiff_testing (0.00s)
+=== RUN   ExampleOption_approximateFloats
+--- PASS: ExampleOption_approximateFloats (0.00s)
+=== RUN   ExampleOption_equalNaNs
+--- PASS: ExampleOption_equalNaNs (0.00s)
+=== RUN   ExampleOption_equalNaNsAndApproximateFloats
+--- PASS: ExampleOption_equalNaNsAndApproximateFloats (0.00s)
+=== RUN   ExampleOption_equalEmpty
+--- PASS: ExampleOption_equalEmpty (0.00s)
+=== RUN   ExampleOption_sortedSlice
+--- PASS: ExampleOption_sortedSlice (0.00s)
+=== RUN   ExampleOption_avoidEqualMethod
+--- PASS: ExampleOption_avoidEqualMethod (0.00s)
+=== RUN   ExampleOption_transformComplex
+--- PASS: ExampleOption_transformComplex (0.00s)
+PASS
+ok  	github.com/google/go-cmp/cmp	0.434s
+=== RUN   TestOptions
+=== RUN   TestOptions/EquateEmpty
+=== RUN   TestOptions/EquateEmpty#01
+=== RUN   TestOptions/SortSlices
+=== RUN   TestOptions/SortSlices#01
+=== RUN   TestOptions/SortSlices#02
+=== RUN   TestOptions/SortSlices#03
+=== RUN   TestOptions/SortSlices#04
+=== RUN   TestOptions/SortSlices#05
+=== RUN   TestOptions/SortSlices+EquateNaNs
+=== RUN   TestOptions/SortMaps
+=== RUN   TestOptions/SortMaps#01
+=== RUN   TestOptions/SortMaps#02
+=== RUN   TestOptions/SortMaps#03
+=== RUN   TestOptions/SortMaps#04
+=== RUN   TestOptions/SortMaps#05
+=== RUN   TestOptions/SortMaps#06
+=== RUN   TestOptions/EquateEmpty+SortSlices+SortMaps
+=== RUN   TestOptions/EquateApprox
+=== RUN   TestOptions/EquateApprox#01
+=== RUN   TestOptions/EquateApprox#02
+=== RUN   TestOptions/EquateApprox#03
+=== RUN   TestOptions/EquateApprox#04
+=== RUN   TestOptions/EquateApprox#05
+=== RUN   TestOptions/EquateApprox#06
+=== RUN   TestOptions/EquateApprox#07
+=== RUN   TestOptions/EquateApprox#08
+=== RUN   TestOptions/EquateApprox#09
+=== RUN   TestOptions/EquateApprox#10
+=== RUN   TestOptions/EquateApprox#11
+=== RUN   TestOptions/EquateApprox#12
+=== RUN   TestOptions/EquateApprox#13
+=== RUN   TestOptions/EquateNaNs
+=== RUN   TestOptions/EquateNaNs#01
+=== RUN   TestOptions/EquateNaNs#02
+=== RUN   TestOptions/EquateApprox+EquateNaNs
+=== RUN   TestOptions/EquateApprox+EquateNaNs#01
+=== RUN   TestOptions/EquateApprox+EquateNaNs+Transform
+=== RUN   TestOptions/EquateApproxTime
+=== RUN   TestOptions/EquateApproxTime#01
+=== RUN   TestOptions/EquateApproxTime#02
+=== RUN   TestOptions/EquateApproxTime#03
+=== RUN   TestOptions/EquateApproxTime#04
+=== RUN   TestOptions/EquateApproxTime#05
+=== RUN   TestOptions/EquateApproxTime#06
+=== RUN   TestOptions/EquateApproxTime#07
+=== RUN   TestOptions/EquateApproxTime#08
+=== RUN   TestOptions/EquateErrors
+=== RUN   TestOptions/EquateErrors#01
+=== RUN   TestOptions/EquateErrors#02
+=== RUN   TestOptions/EquateErrors#03
+=== RUN   TestOptions/EquateErrors#04
+=== RUN   TestOptions/EquateErrors#05
+=== RUN   TestOptions/EquateErrors#06
+=== RUN   TestOptions/EquateErrors#07
+=== RUN   TestOptions/EquateErrors#08
+=== RUN   TestOptions/EquateErrors#09
+=== RUN   TestOptions/EquateErrors#10
+=== RUN   TestOptions/EquateErrors#11
+=== RUN   TestOptions/EquateErrors#12
+=== RUN   TestOptions/EquateErrors#13
+=== RUN   TestOptions/EquateErrors#14
+=== RUN   TestOptions/EquateErrors#15
+=== RUN   TestOptions/EquateErrors#16
+=== RUN   TestOptions/EquateErrors#17
+=== RUN   TestOptions/EquateErrors#18
+=== RUN   TestOptions/EquateErrors#19
+=== RUN   TestOptions/EquateErrors#20
+=== RUN   TestOptions/EquateErrors#21
+=== RUN   TestOptions/EquateErrors#22
+=== RUN   TestOptions/EquateErrors#23
+=== RUN   TestOptions/IgnoreFields
+=== RUN   TestOptions/IgnoreFields#01
+=== RUN   TestOptions/IgnoreFields#02
+=== RUN   TestOptions/IgnoreFields#03
+=== RUN   TestOptions/IgnoreFields#04
+=== RUN   TestOptions/IgnoreFields#05
+=== RUN   TestOptions/IgnoreFields#06
+=== RUN   TestOptions/IgnoreFields#07
+=== RUN   TestOptions/IgnoreFields#08
+=== RUN   TestOptions/IgnoreFields#09
+=== RUN   TestOptions/IgnoreFields#10
+=== RUN   TestOptions/IgnoreFields#11
+=== RUN   TestOptions/IgnoreFields#12
+=== RUN   TestOptions/IgnoreTypes
+=== RUN   TestOptions/IgnoreTypes#01
+=== RUN   TestOptions/IgnoreTypes+IgnoreInterfaces
+=== RUN   TestOptions/IgnoreTypes+IgnoreInterfaces#01
+=== RUN   TestOptions/IgnoreTypes+IgnoreInterfaces#02
+=== RUN   TestOptions/IgnoreInterfaces
+=== RUN   TestOptions/IgnoreInterfaces#01
+=== RUN   TestOptions/IgnoreInterfaces#02
+=== RUN   TestOptions/IgnoreUnexported
+=== RUN   TestOptions/IgnoreUnexported#01
+=== RUN   TestOptions/IgnoreUnexported#02
+=== RUN   TestOptions/IgnoreUnexported#03
+=== RUN   TestOptions/IgnoreUnexported#04
+=== RUN   TestOptions/IgnoreUnexported#05
+=== RUN   TestOptions/IgnoreUnexported#06
+=== RUN   TestOptions/IgnoreUnexported#07
+=== RUN   TestOptions/IgnoreUnexported#08
+=== RUN   TestOptions/IgnoreFields+IgnoreTypes+IgnoreUnexported
+=== RUN   TestOptions/IgnoreSliceElements
+=== RUN   TestOptions/IgnoreSliceElements#01
+=== RUN   TestOptions/IgnoreSliceElements#02
+=== RUN   TestOptions/IgnoreSliceElements+EquateEmpty
+=== RUN   TestOptions/IgnoreMapEntries
+=== RUN   TestOptions/IgnoreMapEntries#01
+=== RUN   TestOptions/IgnoreMapEntries#02
+=== RUN   TestOptions/IgnoreMapEntries+EquateEmpty
+=== RUN   TestOptions/AcyclicTransformer
+=== RUN   TestOptions/AcyclicTransformer#01
+=== RUN   TestOptions/AcyclicTransformer#02
+--- PASS: TestOptions (0.01s)
+    --- PASS: TestOptions/EquateEmpty (0.00s)
+    --- PASS: TestOptions/EquateEmpty#01 (0.00s)
+    --- PASS: TestOptions/SortSlices (0.00s)
+    --- PASS: TestOptions/SortSlices#01 (0.00s)
+    --- PASS: TestOptions/SortSlices#02 (0.00s)
+    --- PASS: TestOptions/SortSlices#03 (0.00s)
+    --- PASS: TestOptions/SortSlices#04 (0.00s)
+    --- PASS: TestOptions/SortSlices#05 (0.00s)
+    --- PASS: TestOptions/SortSlices+EquateNaNs (0.00s)
+    --- PASS: TestOptions/SortMaps (0.00s)
+    --- PASS: TestOptions/SortMaps#01 (0.00s)
+    --- PASS: TestOptions/SortMaps#02 (0.00s)
+    --- PASS: TestOptions/SortMaps#03 (0.00s)
+    --- PASS: TestOptions/SortMaps#04 (0.00s)
+    --- PASS: TestOptions/SortMaps#05 (0.00s)
+    --- PASS: TestOptions/SortMaps#06 (0.00s)
+    --- PASS: TestOptions/EquateEmpty+SortSlices+SortMaps (0.00s)
+    --- PASS: TestOptions/EquateApprox (0.00s)
+    --- PASS: TestOptions/EquateApprox#01 (0.00s)
+    --- PASS: TestOptions/EquateApprox#02 (0.00s)
+    --- PASS: TestOptions/EquateApprox#03 (0.00s)
+    --- PASS: TestOptions/EquateApprox#04 (0.00s)
+    --- PASS: TestOptions/EquateApprox#05 (0.00s)
+    --- PASS: TestOptions/EquateApprox#06 (0.00s)
+    --- PASS: TestOptions/EquateApprox#07 (0.00s)
+    --- PASS: TestOptions/EquateApprox#08 (0.00s)
+    --- PASS: TestOptions/EquateApprox#09 (0.00s)
+    --- PASS: TestOptions/EquateApprox#10 (0.00s)
+    --- PASS: TestOptions/EquateApprox#11 (0.00s)
+    --- PASS: TestOptions/EquateApprox#12 (0.00s)
+    --- PASS: TestOptions/EquateApprox#13 (0.00s)
+    --- PASS: TestOptions/EquateNaNs (0.00s)
+    --- PASS: TestOptions/EquateNaNs#01 (0.00s)
+    --- PASS: TestOptions/EquateNaNs#02 (0.00s)
+    --- PASS: TestOptions/EquateApprox+EquateNaNs (0.00s)
+    --- PASS: TestOptions/EquateApprox+EquateNaNs#01 (0.00s)
+    --- PASS: TestOptions/EquateApprox+EquateNaNs+Transform (0.00s)
+    --- PASS: TestOptions/EquateApproxTime (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#01 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#02 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#03 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#04 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#05 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#06 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#07 (0.00s)
+    --- PASS: TestOptions/EquateApproxTime#08 (0.00s)
+    --- PASS: TestOptions/EquateErrors (0.00s)
+    --- PASS: TestOptions/EquateErrors#01 (0.00s)
+    --- PASS: TestOptions/EquateErrors#02 (0.00s)
+    --- PASS: TestOptions/EquateErrors#03 (0.00s)
+    --- PASS: TestOptions/EquateErrors#04 (0.00s)
+    --- PASS: TestOptions/EquateErrors#05 (0.00s)
+    --- PASS: TestOptions/EquateErrors#06 (0.00s)
+    --- PASS: TestOptions/EquateErrors#07 (0.00s)
+    --- PASS: TestOptions/EquateErrors#08 (0.00s)
+    --- PASS: TestOptions/EquateErrors#09 (0.00s)
+    --- PASS: TestOptions/EquateErrors#10 (0.00s)
+    --- PASS: TestOptions/EquateErrors#11 (0.00s)
+    --- PASS: TestOptions/EquateErrors#12 (0.00s)
+    --- PASS: TestOptions/EquateErrors#13 (0.00s)
+    --- PASS: TestOptions/EquateErrors#14 (0.00s)
+    --- PASS: TestOptions/EquateErrors#15 (0.00s)
+    --- PASS: TestOptions/EquateErrors#16 (0.00s)
+    --- PASS: TestOptions/EquateErrors#17 (0.00s)
+    --- PASS: TestOptions/EquateErrors#18 (0.00s)
+    --- PASS: TestOptions/EquateErrors#19 (0.00s)
+    --- PASS: TestOptions/EquateErrors#20 (0.00s)
+    --- PASS: TestOptions/EquateErrors#21 (0.00s)
+    --- PASS: TestOptions/EquateErrors#22 (0.00s)
+    --- PASS: TestOptions/EquateErrors#23 (0.00s)
+    --- PASS: TestOptions/IgnoreFields (0.00s)
+    --- PASS: TestOptions/IgnoreFields#01 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#02 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#03 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#04 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#05 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#06 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#07 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#08 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#09 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#10 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#11 (0.00s)
+    --- PASS: TestOptions/IgnoreFields#12 (0.00s)
+    --- PASS: TestOptions/IgnoreTypes (0.00s)
+    --- PASS: TestOptions/IgnoreTypes#01 (0.00s)
+    --- PASS: TestOptions/IgnoreTypes+IgnoreInterfaces (0.00s)
+    --- PASS: TestOptions/IgnoreTypes+IgnoreInterfaces#01 (0.00s)
+    --- PASS: TestOptions/IgnoreTypes+IgnoreInterfaces#02 (0.00s)
+    --- PASS: TestOptions/IgnoreInterfaces (0.00s)
+    --- PASS: TestOptions/IgnoreInterfaces#01 (0.00s)
+    --- PASS: TestOptions/IgnoreInterfaces#02 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#01 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#02 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#03 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#04 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#05 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#06 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#07 (0.00s)
+    --- PASS: TestOptions/IgnoreUnexported#08 (0.00s)
+    --- PASS: TestOptions/IgnoreFields+IgnoreTypes+IgnoreUnexported (0.00s)
+    --- PASS: TestOptions/IgnoreSliceElements (0.00s)
+    --- PASS: TestOptions/IgnoreSliceElements#01 (0.00s)
+    --- PASS: TestOptions/IgnoreSliceElements#02 (0.00s)
+    --- PASS: TestOptions/IgnoreSliceElements+EquateEmpty (0.00s)
+    --- PASS: TestOptions/IgnoreMapEntries (0.00s)
+    --- PASS: TestOptions/IgnoreMapEntries#01 (0.00s)
+    --- PASS: TestOptions/IgnoreMapEntries#02 (0.00s)
+    --- PASS: TestOptions/IgnoreMapEntries+EquateEmpty (0.00s)
+    --- PASS: TestOptions/AcyclicTransformer (0.00s)
+    --- PASS: TestOptions/AcyclicTransformer#01 (0.00s)
+    --- PASS: TestOptions/AcyclicTransformer#02 (0.00s)
+=== RUN   TestPanic
+=== RUN   TestPanic/EquateApprox
+=== RUN   TestPanic/EquateApprox#01
+=== RUN   TestPanic/EquateApprox#02
+=== RUN   TestPanic/EquateApprox#03
+=== RUN   TestPanic/EquateApprox#04
+=== RUN   TestPanic/EquateApprox#05
+=== RUN   TestPanic/EquateApproxTime
+=== RUN   TestPanic/SortSlices
+=== RUN   TestPanic/SortSlices#01
+=== RUN   TestPanic/SortMaps
+=== RUN   TestPanic/SortMaps#01
+=== RUN   TestPanic/IgnoreFields
+=== RUN   TestPanic/IgnoreFields#01
+=== RUN   TestPanic/IgnoreFields#02
+=== RUN   TestPanic/IgnoreFields#03
+=== RUN   TestPanic/IgnoreFields#04
+=== RUN   TestPanic/IgnoreFields#05
+=== RUN   TestPanic/IgnoreFields#06
+=== RUN   TestPanic/IgnoreFields#07
+=== RUN   TestPanic/IgnoreFields#08
+=== RUN   TestPanic/IgnoreFields#09
+=== RUN   TestPanic/IgnoreFields#10
+=== RUN   TestPanic/IgnoreTypes
+=== RUN   TestPanic/IgnoreTypes#01
+=== RUN   TestPanic/IgnoreTypes#02
+=== RUN   TestPanic/IgnoreInterfaces
+=== RUN   TestPanic/IgnoreInterfaces#01
+=== RUN   TestPanic/IgnoreInterfaces#02
+=== RUN   TestPanic/IgnoreInterfaces#03
+=== RUN   TestPanic/IgnoreInterfaces#04
+=== RUN   TestPanic/IgnoreInterfaces#05
+=== RUN   TestPanic/IgnoreUnexported
+=== RUN   TestPanic/IgnoreUnexported#01
+=== RUN   TestPanic/IgnoreUnexported#02
+=== RUN   TestPanic/IgnoreUnexported#03
+=== RUN   TestPanic/AcyclicTransformer
+--- PASS: TestPanic (0.00s)
+    --- PASS: TestPanic/EquateApprox (0.00s)
+    --- PASS: TestPanic/EquateApprox#01 (0.00s)
+    --- PASS: TestPanic/EquateApprox#02 (0.00s)
+    --- PASS: TestPanic/EquateApprox#03 (0.00s)
+    --- PASS: TestPanic/EquateApprox#04 (0.00s)
+    --- PASS: TestPanic/EquateApprox#05 (0.00s)
+    --- PASS: TestPanic/EquateApproxTime (0.00s)
+    --- PASS: TestPanic/SortSlices (0.00s)
+    --- PASS: TestPanic/SortSlices#01 (0.00s)
+    --- PASS: TestPanic/SortMaps (0.00s)
+    --- PASS: TestPanic/SortMaps#01 (0.00s)
+    --- PASS: TestPanic/IgnoreFields (0.00s)
+    --- PASS: TestPanic/IgnoreFields#01 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#02 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#03 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#04 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#05 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#06 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#07 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#08 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#09 (0.00s)
+    --- PASS: TestPanic/IgnoreFields#10 (0.00s)
+    --- PASS: TestPanic/IgnoreTypes (0.00s)
+    --- PASS: TestPanic/IgnoreTypes#01 (0.00s)
+    --- PASS: TestPanic/IgnoreTypes#02 (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces#01 (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces#02 (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces#03 (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces#04 (0.00s)
+    --- PASS: TestPanic/IgnoreInterfaces#05 (0.00s)
+    --- PASS: TestPanic/IgnoreUnexported (0.00s)
+    --- PASS: TestPanic/IgnoreUnexported#01 (0.00s)
+    --- PASS: TestPanic/IgnoreUnexported#02 (0.00s)
+    --- PASS: TestPanic/IgnoreUnexported#03 (0.00s)
+    --- PASS: TestPanic/AcyclicTransformer (0.00s)
+=== RUN   ExampleIgnoreFields_testing
+--- PASS: ExampleIgnoreFields_testing (0.00s)
+PASS
+ok  	github.com/google/go-cmp/cmp/cmpopts	0.011s
+=== RUN   TestDifference
+=== RUN   TestDifference/#00
+=== RUN   TestDifference/#01
+=== RUN   TestDifference/#02
+=== RUN   TestDifference/#03
+=== RUN   TestDifference/#04
+=== RUN   TestDifference/#05
+=== RUN   TestDifference/#06
+=== RUN   TestDifference/#07
+=== RUN   TestDifference/#08
+=== RUN   TestDifference/#09
+=== RUN   TestDifference/#10
+=== RUN   TestDifference/#11
+=== RUN   TestDifference/#12
+=== RUN   TestDifference/#13
+=== RUN   TestDifference/#14
+=== RUN   TestDifference/#15
+=== RUN   TestDifference/#16
+=== RUN   TestDifference/#17
+=== RUN   TestDifference/#18
+=== RUN   TestDifference/#19
+=== RUN   TestDifference/#20
+=== RUN   TestDifference/#21
+=== RUN   TestDifference/#22
+=== RUN   TestDifference/#23
+=== RUN   TestDifference/#24
+=== RUN   TestDifference/#25
+=== RUN   TestDifference/#26
+=== RUN   TestDifference/#27
+=== RUN   TestDifference/#28
+=== RUN   TestDifference/#29
+=== RUN   TestDifference/#30
+=== RUN   TestDifference/#31
+=== RUN   TestDifference/#32
+=== RUN   TestDifference/#33
+=== RUN   TestDifference/#34
+=== RUN   TestDifference/#35
+=== RUN   TestDifference/#36
+=== RUN   TestDifference/#37
+=== RUN   TestDifference/#38
+=== RUN   TestDifference/#39
+=== RUN   TestDifference/#40
+=== RUN   TestDifference/#41
+=== RUN   TestDifference/#42
+=== RUN   TestDifference/#43
+=== RUN   TestDifference/#44
+=== RUN   TestDifference/#45
+=== RUN   TestDifference/#46
+=== RUN   TestDifference/#47
+=== RUN   TestDifference/#48
+=== RUN   TestDifference/#49
+=== RUN   TestDifference/#50
+=== RUN   TestDifference/#51
+=== RUN   TestDifference/#52
+=== RUN   TestDifference/#53
+=== RUN   TestDifference/#54
+--- PASS: TestDifference (0.00s)
+    --- PASS: TestDifference/#00 (0.00s)
+    --- PASS: TestDifference/#01 (0.00s)
+    --- PASS: TestDifference/#02 (0.00s)
+    --- PASS: TestDifference/#03 (0.00s)
+    --- PASS: TestDifference/#04 (0.00s)
+    --- PASS: TestDifference/#05 (0.00s)
+    --- PASS: TestDifference/#06 (0.00s)
+    --- PASS: TestDifference/#07 (0.00s)
+    --- PASS: TestDifference/#08 (0.00s)
+    --- PASS: TestDifference/#09 (0.00s)
+    --- PASS: TestDifference/#10 (0.00s)
+    --- PASS: TestDifference/#11 (0.00s)
+    --- PASS: TestDifference/#12 (0.00s)
+    --- PASS: TestDifference/#13 (0.00s)
+    --- PASS: TestDifference/#14 (0.00s)
+    --- PASS: TestDifference/#15 (0.00s)
+    --- PASS: TestDifference/#16 (0.00s)
+    --- PASS: TestDifference/#17 (0.00s)
+    --- PASS: TestDifference/#18 (0.00s)
+    --- PASS: TestDifference/#19 (0.00s)
+    --- PASS: TestDifference/#20 (0.00s)
+    --- PASS: TestDifference/#21 (0.00s)
+    --- PASS: TestDifference/#22 (0.00s)
+    --- PASS: TestDifference/#23 (0.00s)
+    --- PASS: TestDifference/#24 (0.00s)
+    --- PASS: TestDifference/#25 (0.00s)
+    --- PASS: TestDifference/#26 (0.00s)
+    --- PASS: TestDifference/#27 (0.00s)
+    --- PASS: TestDifference/#28 (0.00s)
+    --- PASS: TestDifference/#29 (0.00s)
+    --- PASS: TestDifference/#30 (0.00s)
+    --- PASS: TestDifference/#31 (0.00s)
+    --- PASS: TestDifference/#32 (0.00s)
+    --- PASS: TestDifference/#33 (0.00s)
+    --- PASS: TestDifference/#34 (0.00s)
+    --- PASS: TestDifference/#35 (0.00s)
+    --- PASS: TestDifference/#36 (0.00s)
+    --- PASS: TestDifference/#37 (0.00s)
+    --- PASS: TestDifference/#38 (0.00s)
+    --- PASS: TestDifference/#39 (0.00s)
+    --- PASS: TestDifference/#40 (0.00s)
+    --- PASS: TestDifference/#41 (0.00s)
+    --- PASS: TestDifference/#42 (0.00s)
+    --- PASS: TestDifference/#43 (0.00s)
+    --- PASS: TestDifference/#44 (0.00s)
+    --- PASS: TestDifference/#45 (0.00s)
+    --- PASS: TestDifference/#46 (0.00s)
+    --- PASS: TestDifference/#47 (0.00s)
+    --- PASS: TestDifference/#48 (0.00s)
+    --- PASS: TestDifference/#49 (0.00s)
+    --- PASS: TestDifference/#50 (0.00s)
+    --- PASS: TestDifference/#51 (0.00s)
+    --- PASS: TestDifference/#52 (0.00s)
+    --- PASS: TestDifference/#53 (0.00s)
+    --- PASS: TestDifference/#54 (0.00s)
+=== RUN   TestDifferenceFuzz
+=== RUN   TestDifferenceFuzz/P0
+=== RUN   TestDifferenceFuzz/P0/N1
+=== RUN   TestDifferenceFuzz/P0/N2
+=== RUN   TestDifferenceFuzz/P0/N4
+=== RUN   TestDifferenceFuzz/P0/N8
+=== RUN   TestDifferenceFuzz/P0/N16
+=== RUN   TestDifferenceFuzz/P0/N32
+=== RUN   TestDifferenceFuzz/P0/N64
+=== RUN   TestDifferenceFuzz/P0/N128
+=== RUN   TestDifferenceFuzz/P0/N256
+=== RUN   TestDifferenceFuzz/P0/N512
+=== RUN   TestDifferenceFuzz/P0/N1024
+=== RUN   TestDifferenceFuzz/P1
+=== RUN   TestDifferenceFuzz/P1/N1
+=== RUN   TestDifferenceFuzz/P1/N2
+=== RUN   TestDifferenceFuzz/P1/N4
+=== RUN   TestDifferenceFuzz/P1/N8
+=== RUN   TestDifferenceFuzz/P1/N16
+=== RUN   TestDifferenceFuzz/P1/N32
+=== RUN   TestDifferenceFuzz/P1/N64
+=== RUN   TestDifferenceFuzz/P1/N128
+=== RUN   TestDifferenceFuzz/P1/N256
+=== RUN   TestDifferenceFuzz/P1/N512
+=== RUN   TestDifferenceFuzz/P1/N1024
+=== RUN   TestDifferenceFuzz/P2
+=== RUN   TestDifferenceFuzz/P2/N1
+=== RUN   TestDifferenceFuzz/P2/N2
+=== RUN   TestDifferenceFuzz/P2/N4
+=== RUN   TestDifferenceFuzz/P2/N8
+=== RUN   TestDifferenceFuzz/P2/N16
+=== RUN   TestDifferenceFuzz/P2/N32
+=== RUN   TestDifferenceFuzz/P2/N64
+=== RUN   TestDifferenceFuzz/P2/N128
+=== RUN   TestDifferenceFuzz/P2/N256
+=== RUN   TestDifferenceFuzz/P2/N512
+=== RUN   TestDifferenceFuzz/P2/N1024
+=== RUN   TestDifferenceFuzz/P3
+=== RUN   TestDifferenceFuzz/P3/N1
+=== RUN   TestDifferenceFuzz/P3/N2
+=== RUN   TestDifferenceFuzz/P3/N4
+=== RUN   TestDifferenceFuzz/P3/N8
+=== RUN   TestDifferenceFuzz/P3/N16
+=== RUN   TestDifferenceFuzz/P3/N32
+=== RUN   TestDifferenceFuzz/P3/N64
+=== RUN   TestDifferenceFuzz/P3/N128
+=== RUN   TestDifferenceFuzz/P3/N256
+=== RUN   TestDifferenceFuzz/P3/N512
+=== RUN   TestDifferenceFuzz/P3/N1024
+=== RUN   TestDifferenceFuzz/P4
+=== RUN   TestDifferenceFuzz/P4/N1
+=== RUN   TestDifferenceFuzz/P4/N2
+=== RUN   TestDifferenceFuzz/P4/N4
+=== RUN   TestDifferenceFuzz/P4/N8
+=== RUN   TestDifferenceFuzz/P4/N16
+=== RUN   TestDifferenceFuzz/P4/N32
+=== RUN   TestDifferenceFuzz/P4/N64
+=== RUN   TestDifferenceFuzz/P4/N128
+=== RUN   TestDifferenceFuzz/P4/N256
+=== RUN   TestDifferenceFuzz/P4/N512
+=== RUN   TestDifferenceFuzz/P4/N1024
+=== RUN   TestDifferenceFuzz/P5
+=== RUN   TestDifferenceFuzz/P5/N1
+=== RUN   TestDifferenceFuzz/P5/N2
+=== RUN   TestDifferenceFuzz/P5/N4
+=== RUN   TestDifferenceFuzz/P5/N8
+=== RUN   TestDifferenceFuzz/P5/N16
+=== RUN   TestDifferenceFuzz/P5/N32
+=== RUN   TestDifferenceFuzz/P5/N64
+=== RUN   TestDifferenceFuzz/P5/N128
+=== RUN   TestDifferenceFuzz/P5/N256
+=== RUN   TestDifferenceFuzz/P5/N512
+=== RUN   TestDifferenceFuzz/P5/N1024
+=== RUN   TestDifferenceFuzz/P6
+=== RUN   TestDifferenceFuzz/P6/N1
+=== RUN   TestDifferenceFuzz/P6/N2
+=== RUN   TestDifferenceFuzz/P6/N4
+=== RUN   TestDifferenceFuzz/P6/N8
+=== RUN   TestDifferenceFuzz/P6/N16
+=== RUN   TestDifferenceFuzz/P6/N32
+=== RUN   TestDifferenceFuzz/P6/N64
+=== RUN   TestDifferenceFuzz/P6/N128
+=== RUN   TestDifferenceFuzz/P6/N256
+=== RUN   TestDifferenceFuzz/P6/N512
+=== RUN   TestDifferenceFuzz/P6/N1024
+=== RUN   TestDifferenceFuzz/P7
+=== RUN   TestDifferenceFuzz/P7/N1
+=== RUN   TestDifferenceFuzz/P7/N2
+=== RUN   TestDifferenceFuzz/P7/N4
+=== RUN   TestDifferenceFuzz/P7/N8
+=== RUN   TestDifferenceFuzz/P7/N16
+=== RUN   TestDifferenceFuzz/P7/N32
+=== RUN   TestDifferenceFuzz/P7/N64
+=== RUN   TestDifferenceFuzz/P7/N128
+=== RUN   TestDifferenceFuzz/P7/N256
+=== RUN   TestDifferenceFuzz/P7/N512
+=== RUN   TestDifferenceFuzz/P7/N1024
+=== RUN   TestDifferenceFuzz/P8
+=== RUN   TestDifferenceFuzz/P8/N1
+=== RUN   TestDifferenceFuzz/P8/N2
+=== RUN   TestDifferenceFuzz/P8/N4
+=== RUN   TestDifferenceFuzz/P8/N8
+=== RUN   TestDifferenceFuzz/P8/N16
+=== RUN   TestDifferenceFuzz/P8/N32
+=== RUN   TestDifferenceFuzz/P8/N64
+=== RUN   TestDifferenceFuzz/P8/N128
+=== RUN   TestDifferenceFuzz/P8/N256
+=== RUN   TestDifferenceFuzz/P8/N512
+=== RUN   TestDifferenceFuzz/P8/N1024
+=== RUN   TestDifferenceFuzz/P9
+=== RUN   TestDifferenceFuzz/P9/N1
+=== RUN   TestDifferenceFuzz/P9/N2
+=== RUN   TestDifferenceFuzz/P9/N4
+=== RUN   TestDifferenceFuzz/P9/N8
+=== RUN   TestDifferenceFuzz/P9/N16
+=== RUN   TestDifferenceFuzz/P9/N32
+=== RUN   TestDifferenceFuzz/P9/N64
+=== RUN   TestDifferenceFuzz/P9/N128
+=== RUN   TestDifferenceFuzz/P9/N256
+=== RUN   TestDifferenceFuzz/P9/N512
+=== RUN   TestDifferenceFuzz/P9/N1024
+=== RUN   TestDifferenceFuzz/P10
+=== RUN   TestDifferenceFuzz/P10/N1
+=== RUN   TestDifferenceFuzz/P10/N2
+=== RUN   TestDifferenceFuzz/P10/N4
+=== RUN   TestDifferenceFuzz/P10/N8
+=== RUN   TestDifferenceFuzz/P10/N16
+=== RUN   TestDifferenceFuzz/P10/N32
+=== RUN   TestDifferenceFuzz/P10/N64
+=== RUN   TestDifferenceFuzz/P10/N128
+=== RUN   TestDifferenceFuzz/P10/N256
+=== RUN   TestDifferenceFuzz/P10/N512
+=== RUN   TestDifferenceFuzz/P10/N1024
+=== RUN   TestDifferenceFuzz/P11
+=== RUN   TestDifferenceFuzz/P11/N1
+=== RUN   TestDifferenceFuzz/P11/N2
+=== RUN   TestDifferenceFuzz/P11/N4
+=== RUN   TestDifferenceFuzz/P11/N8
+=== RUN   TestDifferenceFuzz/P11/N16
+=== RUN   TestDifferenceFuzz/P11/N32
+=== RUN   TestDifferenceFuzz/P11/N64
+=== RUN   TestDifferenceFuzz/P11/N128
+=== RUN   TestDifferenceFuzz/P11/N256
+=== RUN   TestDifferenceFuzz/P11/N512
+=== RUN   TestDifferenceFuzz/P11/N1024
+=== RUN   TestDifferenceFuzz/P12
+=== RUN   TestDifferenceFuzz/P12/N1
+=== RUN   TestDifferenceFuzz/P12/N2
+=== RUN   TestDifferenceFuzz/P12/N4
+=== RUN   TestDifferenceFuzz/P12/N8
+=== RUN   TestDifferenceFuzz/P12/N16
+=== RUN   TestDifferenceFuzz/P12/N32
+=== RUN   TestDifferenceFuzz/P12/N64
+=== RUN   TestDifferenceFuzz/P12/N128
+=== RUN   TestDifferenceFuzz/P12/N256
+=== RUN   TestDifferenceFuzz/P12/N512
+=== RUN   TestDifferenceFuzz/P12/N1024
+=== RUN   TestDifferenceFuzz/P13
+=== RUN   TestDifferenceFuzz/P13/N1
+=== RUN   TestDifferenceFuzz/P13/N2
+=== RUN   TestDifferenceFuzz/P13/N4
+=== RUN   TestDifferenceFuzz/P13/N8
+=== RUN   TestDifferenceFuzz/P13/N16
+=== RUN   TestDifferenceFuzz/P13/N32
+=== RUN   TestDifferenceFuzz/P13/N64
+=== RUN   TestDifferenceFuzz/P13/N128
+=== RUN   TestDifferenceFuzz/P13/N256
+=== RUN   TestDifferenceFuzz/P13/N512
+=== RUN   TestDifferenceFuzz/P13/N1024
+=== RUN   TestDifferenceFuzz/P14
+=== RUN   TestDifferenceFuzz/P14/N1
+=== RUN   TestDifferenceFuzz/P14/N2
+=== RUN   TestDifferenceFuzz/P14/N4
+=== RUN   TestDifferenceFuzz/P14/N8
+=== RUN   TestDifferenceFuzz/P14/N16
+=== RUN   TestDifferenceFuzz/P14/N32
+=== RUN   TestDifferenceFuzz/P14/N64
+=== RUN   TestDifferenceFuzz/P14/N128
+=== RUN   TestDifferenceFuzz/P14/N256
+=== RUN   TestDifferenceFuzz/P14/N512
+=== RUN   TestDifferenceFuzz/P14/N1024
+--- PASS: TestDifferenceFuzz (0.09s)
+    --- PASS: TestDifferenceFuzz/P0 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P0/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P1/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P2/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P3 (0.01s)
+        --- PASS: TestDifferenceFuzz/P3/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P3/N512 (0.01s)
+        --- PASS: TestDifferenceFuzz/P3/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P4/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P5 (0.01s)
+        --- PASS: TestDifferenceFuzz/P5/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P5/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P6 (0.01s)
+        --- PASS: TestDifferenceFuzz/P6/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P6/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P7 (0.01s)
+        --- PASS: TestDifferenceFuzz/P7/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P7/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P8 (0.01s)
+        --- PASS: TestDifferenceFuzz/P8/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P8/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P9 (0.01s)
+        --- PASS: TestDifferenceFuzz/P9/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P9/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P10 (0.01s)
+        --- PASS: TestDifferenceFuzz/P10/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P10/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P11 (0.01s)
+        --- PASS: TestDifferenceFuzz/P11/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P11/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P12 (0.01s)
+        --- PASS: TestDifferenceFuzz/P12/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P12/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P13 (0.01s)
+        --- PASS: TestDifferenceFuzz/P13/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P13/N1024 (0.00s)
+    --- PASS: TestDifferenceFuzz/P14 (0.01s)
+        --- PASS: TestDifferenceFuzz/P14/N1 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N2 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N4 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N8 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N16 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N32 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N64 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N128 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N256 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N512 (0.00s)
+        --- PASS: TestDifferenceFuzz/P14/N1024 (0.00s)
+=== RUN   TestResult
+--- PASS: TestResult (0.00s)
+PASS
+ok  	github.com/google/go-cmp/cmp/internal/diff	0.092s
+?   	github.com/google/go-cmp/cmp/internal/flags	[no test files]
+=== RUN   TestNameOf
+=== RUN   TestNameOf/#00
+=== RUN   TestNameOf/#01
+=== RUN   TestNameOf/#02
+=== RUN   TestNameOf/#03
+=== RUN   TestNameOf/#04
+=== RUN   TestNameOf/#05
+=== RUN   TestNameOf/#06
+=== RUN   TestNameOf/#07
+=== RUN   TestNameOf/#08
+=== RUN   TestNameOf/#09
+=== RUN   TestNameOf/#10
+=== RUN   TestNameOf/#11
+=== RUN   TestNameOf/#12
+=== RUN   TestNameOf/#13
+=== RUN   TestNameOf/#14
+=== RUN   TestNameOf/#15
+--- PASS: TestNameOf (0.00s)
+    --- PASS: TestNameOf/#00 (0.00s)
+    --- PASS: TestNameOf/#01 (0.00s)
+    --- PASS: TestNameOf/#02 (0.00s)
+    --- PASS: TestNameOf/#03 (0.00s)
+    --- PASS: TestNameOf/#04 (0.00s)
+    --- PASS: TestNameOf/#05 (0.00s)
+    --- PASS: TestNameOf/#06 (0.00s)
+    --- PASS: TestNameOf/#07 (0.00s)
+    --- PASS: TestNameOf/#08 (0.00s)
+    --- PASS: TestNameOf/#09 (0.00s)
+    --- PASS: TestNameOf/#10 (0.00s)
+    --- PASS: TestNameOf/#11 (0.00s)
+    --- PASS: TestNameOf/#12 (0.00s)
+    --- PASS: TestNameOf/#13 (0.00s)
+    --- PASS: TestNameOf/#14 (0.00s)
+    --- PASS: TestNameOf/#15 (0.00s)
+PASS
+ok  	github.com/google/go-cmp/cmp/internal/function	0.003s
+?   	github.com/google/go-cmp/cmp/internal/testprotos	[no test files]
+?   	github.com/google/go-cmp/cmp/internal/teststructs	[no test files]
+?   	github.com/google/go-cmp/cmp/internal/teststructs/foo1	[no test files]
+?   	github.com/google/go-cmp/cmp/internal/teststructs/foo2	[no test files]
+=== RUN   TestTypeString
+--- PASS: TestTypeString (0.00s)
+=== RUN   TestIsZero
+=== RUN   TestIsZero/#00
+=== RUN   TestIsZero/#01
+=== RUN   TestIsZero/#02
+=== RUN   TestIsZero/#03
+=== RUN   TestIsZero/#04
+=== RUN   TestIsZero/#05
+=== RUN   TestIsZero/#06
+=== RUN   TestIsZero/#07
+=== RUN   TestIsZero/#08
+=== RUN   TestIsZero/#09
+=== RUN   TestIsZero/#10
+=== RUN   TestIsZero/#11
+=== RUN   TestIsZero/#12
+=== RUN   TestIsZero/#13
+=== RUN   TestIsZero/#14
+=== RUN   TestIsZero/#15
+=== RUN   TestIsZero/#16
+=== RUN   TestIsZero/#17
+=== RUN   TestIsZero/#18
+=== RUN   TestIsZero/#19
+=== RUN   TestIsZero/#20
+=== RUN   TestIsZero/#21
+=== RUN   TestIsZero/#22
+--- PASS: TestIsZero (0.00s)
+    --- PASS: TestIsZero/#00 (0.00s)
+    --- PASS: TestIsZero/#01 (0.00s)
+    --- PASS: TestIsZero/#02 (0.00s)
+    --- PASS: TestIsZero/#03 (0.00s)
+    --- PASS: TestIsZero/#04 (0.00s)
+    --- PASS: TestIsZero/#05 (0.00s)
+    --- PASS: TestIsZero/#06 (0.00s)
+    --- PASS: TestIsZero/#07 (0.00s)
+    --- PASS: TestIsZero/#08 (0.00s)
+    --- PASS: TestIsZero/#09 (0.00s)
+    --- PASS: TestIsZero/#10 (0.00s)
+    --- PASS: TestIsZero/#11 (0.00s)
+    --- PASS: TestIsZero/#12 (0.00s)
+    --- PASS: TestIsZero/#13 (0.00s)
+    --- PASS: TestIsZero/#14 (0.00s)
+    --- PASS: TestIsZero/#15 (0.00s)
+    --- PASS: TestIsZero/#16 (0.00s)
+    --- PASS: TestIsZero/#17 (0.00s)
+    --- PASS: TestIsZero/#18 (0.00s)
+    --- PASS: TestIsZero/#19 (0.00s)
+    --- PASS: TestIsZero/#20 (0.00s)
+    --- PASS: TestIsZero/#21 (0.00s)
+    --- PASS: TestIsZero/#22 (0.00s)
+=== RUN   TestSortKeys
+--- PASS: TestSortKeys (0.00s)
+PASS
+ok  	github.com/google/go-cmp/cmp/internal/value	0.004s
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--builddirectory=_build -O--buildsystem=golang
+   dh_prep -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_install -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdocs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installchangelogs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installinit -O--builddirectory=_build -O--buildsystem=golang
+   dh_installsystemduser -O--builddirectory=_build -O--buildsystem=golang
+   dh_perl -O--builddirectory=_build -O--buildsystem=golang
+   dh_link -O--builddirectory=_build -O--buildsystem=golang
+   dh_strip_nondeterminism -O--builddirectory=_build -O--buildsystem=golang
+   dh_compress -O--builddirectory=_build -O--buildsystem=golang
+   dh_fixperms -O--builddirectory=_build -O--buildsystem=golang
+   dh_missing -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdeb -O--builddirectory=_build -O--buildsystem=golang
+   dh_golang -O--builddirectory=_build -O--buildsystem=golang
+   dh_gencontrol -O--builddirectory=_build -O--buildsystem=golang
+   dh_md5sums -O--builddirectory=_build -O--buildsystem=golang
+   dh_builddeb -O--builddirectory=_build -O--buildsystem=golang
+dpkg-deb: building package 'golang-github-google-go-cmp-dev' in '../golang-github-google-go-cmp-dev_0.5.6-1_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../golang-github-google-go-cmp_0.5.6-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian golang-github-google-go-cmp_0.5.6-1_amd64.changes ...
+W: golang-github-google-go-cmp source: newer-standards-version 4.5.0 (current is 4.3.0)
+W: golang-github-google-go-cmp-dev: new-package-should-close-itp-bug
+Finished running lintian.

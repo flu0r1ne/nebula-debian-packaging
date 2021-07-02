@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Thu, 01 Jul 2021 01:01:45 -0500
+Source: golang-github-google-go-cmp
+Binary: golang-github-google-go-cmp-dev
+Architecture: source all
+Version: 0.5.6-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Changed-By: Alex David <flu0r1ne@flu0r1ne.net>
+Description:
+ golang-github-google-go-cmp-dev - Package for comparing Go values in tests (library)
+Changes:
+ golang-github-google-go-cmp (0.5.6-1) UNRELEASED; urgency=medium
+ .
+   * Initial release (Closes: TODO)
+Checksums-Sha1:
+ ef6c357a8ae4fb1a84e4f5b7bb2a93a52c107a62 1338 golang-github-google-go-cmp_0.5.6-1.dsc
+ 19cad3b55a0bb1f4bb7f517414e25f0c2689a70a 104421 golang-github-google-go-cmp_0.5.6.orig.tar.gz
+ 5fa3653b4db674aaa9d2bd37c9947e4f7353aa06 2468 golang-github-google-go-cmp_0.5.6-1.debian.tar.xz
+ 78bda2f7698462fe5f966abbee921cc838179b54 85044 golang-github-google-go-cmp-dev_0.5.6-1_all.deb
+ 7649a95b6f5f741298da9c9bdc7caca92d0c836d 4840 golang-github-google-go-cmp_0.5.6-1_amd64.buildinfo
+Checksums-Sha256:
+ 2c68478e4b8f75c496699e0e84ee39b9c1a53b3ce0c3b3ec2a844da0d322284f 1338 golang-github-google-go-cmp_0.5.6-1.dsc
+ cba2118596f694c135b3f3d6fe49b73ca2a7882aa4d7f346e341cb106afce5f1 104421 golang-github-google-go-cmp_0.5.6.orig.tar.gz
+ 1ab17af302d58508afcf756e659474ec657f9689fadf20cfba95e671156bc804 2468 golang-github-google-go-cmp_0.5.6-1.debian.tar.xz
+ a871699ba13c7278cff2eaa83048f6503f4bd91fc131da04f954f484956e908f 85044 golang-github-google-go-cmp-dev_0.5.6-1_all.deb
+ 5aa204e0a8f44adaee00548c731ae1f856d84e0d70bb851e6d9e7dda20e02aa1 4840 golang-github-google-go-cmp_0.5.6-1_amd64.buildinfo
+Files:
+ a08fbea1b655bc91f0c1d561cda9be9b 1338 devel optional golang-github-google-go-cmp_0.5.6-1.dsc
+ 27c9f186f83bfdd8d74091c7982ed289 104421 devel optional golang-github-google-go-cmp_0.5.6.orig.tar.gz
+ bb02ec8a3fb54743a662936c7f4d42bf 2468 devel optional golang-github-google-go-cmp_0.5.6-1.debian.tar.xz
+ d108e0d51da48f3ed2173f70c91a3814 85044 devel optional golang-github-google-go-cmp-dev_0.5.6-1_all.deb
+ 3b0b0d5c82ea36cbb546db4a50d0d146 4840 devel optional golang-github-google-go-cmp_0.5.6-1_amd64.buildinfo

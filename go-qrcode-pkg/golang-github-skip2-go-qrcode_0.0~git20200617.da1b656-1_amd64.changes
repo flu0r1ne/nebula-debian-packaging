@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Wed, 30 Jun 2021 12:19:19 -0500
+Source: golang-github-skip2-go-qrcode
+Binary: golang-github-skip2-go-qrcode-dev
+Architecture: source all
+Version: 0.0~git20200617.da1b656-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Changed-By: Alex David <flu0r1ne@flu0r1ne.net>
+Description:
+ golang-github-skip2-go-qrcode-dev - QR Code encoder written in Go (library)
+Changes:
+ golang-github-skip2-go-qrcode (0.0~git20200617.da1b656-1) unstable; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 28d07cf46436abc61b9ef03608acf2ae9e01f24b 1487 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.dsc
+ b9ff3d601cac016a344b70781168a9e8ce87d738 30000 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656.orig.tar.xz
+ 0d255cbb4a48a7fe290390398c96288e9eb7fc45 2884 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.debian.tar.xz
+ 75ad92b3bc065a3dc9ba64ea9dfb529ef4211c79 32068 golang-github-skip2-go-qrcode-dev_0.0~git20200617.da1b656-1_all.deb
+ 4622ba6e34f8d9571498848b9d7c7d6d6128f9e2 4982 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1_amd64.buildinfo
+Checksums-Sha256:
+ 451bdce81c29b46bb026320be08856fedeb41e6a5f122fe82e068b8763e3a7ba 1487 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.dsc
+ b052e6abb5c6f211af38f351a7dbb3b2148dcb21bb9a4dbfa8c47d8a384a1109 30000 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656.orig.tar.xz
+ 92e50b46358ea591cb00256bb3da02f4740f7d5ee97b9c1f15390b416d2c0622 2884 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.debian.tar.xz
+ 08b3008b68061d6065b5c8c3a2f832b6f62df30e508415e259a282cc512c29fe 32068 golang-github-skip2-go-qrcode-dev_0.0~git20200617.da1b656-1_all.deb
+ 99086db29ac9f991c6d513368ec6075a89de97c257b63bf4a01496d838b6af40 4982 golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1_amd64.buildinfo
+Files:
+ 14c8917acd5f217d42d153fc69a248fc 1487 devel optional golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.dsc
+ 3ae031a4562068ad2afa8d6c7240c71d 30000 devel optional golang-github-skip2-go-qrcode_0.0~git20200617.da1b656.orig.tar.xz
+ 432b367b3ebc02f488050a45968cacfd 2884 devel optional golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1.debian.tar.xz
+ 79225699d338f7f452bd83eae9ba703f 32068 devel optional golang-github-skip2-go-qrcode-dev_0.0~git20200617.da1b656-1_all.deb
+ daa45d9e78794dea2ac2e53cbae85459 4982 devel optional golang-github-skip2-go-qrcode_0.0~git20200617.da1b656-1_amd64.buildinfo

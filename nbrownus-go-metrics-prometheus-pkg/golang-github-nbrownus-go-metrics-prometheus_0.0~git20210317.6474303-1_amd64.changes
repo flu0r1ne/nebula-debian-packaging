@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Thu, 01 Jul 2021 13:33:24 -0500
+Source: golang-github-nbrownus-go-metrics-prometheus
+Binary: golang-github-nbrownus-go-metrics-prometheus-dev
+Architecture: source all
+Version: 0.0~git20210317.6474303-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Changed-By: Alex David <flu0r1ne@flu0r1ne.net>
+Description:
+ golang-github-nbrownus-go-metrics-prometheus-dev - Prometheus support for go-metrics with addtional metrics for nebu
+Changes:
+ golang-github-nbrownus-go-metrics-prometheus (0.0~git20210317.6474303-1) UNRELEASED; urgency=medium
+ .
+   * Initial release (Closes: TODO)
+Checksums-Sha1:
+ 3352e45be080e074a9e9cad4df02dc219b609a85 1765 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.dsc
+ d835758abf99487c5a53753cc5275e4f79316fa1 6444 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303.orig.tar.xz
+ 40f7a28ff261080daafe1e8173b74877a9bd3198 2416 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.debian.tar.xz
+ e72bc9ed9ffb1bce3d68a6d02c553906bb48b90c 4172 golang-github-nbrownus-go-metrics-prometheus-dev_0.0~git20210317.6474303-1_all.deb
+ cee4a43b0d01246d03910d736e8753109e95a22a 7712 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1_amd64.buildinfo
+Checksums-Sha256:
+ a295b28eef7fef3011f72472fd67364ef0d4eca153527874831c46cf881797be 1765 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.dsc
+ e26c84a03eea1fa45b92caa246aeaa92c126aff6aceab49fdac6ae4f17bda555 6444 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303.orig.tar.xz
+ a256895260e90ca85acd9d90f64b9a1225cac210eac3d3a2f011f530fdba5c80 2416 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.debian.tar.xz
+ 1d82f3e12ed7b400cd9c75ac8d2340c0971178eeec801dbdd5d106d9adb656bc 4172 golang-github-nbrownus-go-metrics-prometheus-dev_0.0~git20210317.6474303-1_all.deb
+ 5ac55051ae68bee730543d28aa3deb6856e6541a3187034933e3857452a65d5c 7712 golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1_amd64.buildinfo
+Files:
+ 5a34ccf0a9baa41ec779a5cd8ecb97d4 1765 devel optional golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.dsc
+ eb5b0db18818f3730668dfac45019594 6444 devel optional golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303.orig.tar.xz
+ ec22181540aedd2ae5de58ab397bad3f 2416 devel optional golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.debian.tar.xz
+ 1aa5ffd374843762e3d4d16858fbd182 4172 devel optional golang-github-nbrownus-go-metrics-prometheus-dev_0.0~git20210317.6474303-1_all.deb
+ 7940dac13a8cf73d6f3ba00176e6ba95 7712 devel optional golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1_amd64.buildinfo

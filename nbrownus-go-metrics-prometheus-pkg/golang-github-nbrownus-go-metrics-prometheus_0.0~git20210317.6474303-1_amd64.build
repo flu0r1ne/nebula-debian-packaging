@@ -1,0 +1,189 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package golang-github-nbrownus-go-metrics-prometheus
+dpkg-buildpackage: info: source version 0.0~git20210317.6474303-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Alex David <flu0r1ne@flu0r1ne.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --builddirectory=_build --buildsystem=golang --with=golang
+   dh_auto_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_clean -O--builddirectory=_build -O--buildsystem=golang
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building golang-github-nbrownus-go-metrics-prometheus using existing ./golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303.orig.tar.xz
+dpkg-source: info: building golang-github-nbrownus-go-metrics-prometheus in golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.debian.tar.xz
+dpkg-source: info: building golang-github-nbrownus-go-metrics-prometheus in golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1.dsc
+ debian/rules binary
+dh binary --builddirectory=_build --buildsystem=golang --with=golang
+   dh_update_autotools_config -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_configure -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_build -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go install -trimpath -v -p 32 github.com/nbrownus/go-metrics-prometheus
+internal/unsafeheader
+golang.org/x/sys/internal/unsafeheader
+runtime/internal/sys
+internal/nettrace
+unicode/utf8
+unicode
+internal/race
+math/bits
+encoding
+unicode/utf16
+container/list
+vendor/golang.org/x/crypto/internal/subtle
+crypto/subtle
+vendor/golang.org/x/crypto/cryptobyte/asn1
+internal/cpu
+runtime/internal/atomic
+sync/atomic
+crypto/internal/subtle
+runtime/cgo
+runtime/internal/math
+internal/testlog
+internal/bytealg
+math
+runtime
+internal/reflectlite
+sync
+internal/singleflight
+math/rand
+errors
+sort
+io
+internal/oserror
+strconv
+vendor/golang.org/x/net/dns/dnsmessage
+syscall
+github.com/beorn7/perks/quantile
+hash
+crypto/internal/randutil
+strings
+bytes
+crypto/hmac
+hash/crc32
+vendor/golang.org/x/crypto/hkdf
+crypto
+reflect
+crypto/rc4
+vendor/golang.org/x/text/transform
+bufio
+path
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+regexp/syntax
+internal/syscall/execenv
+internal/syscall/unix
+time
+regexp
+context
+internal/poll
+internal/fmtsort
+encoding/binary
+os
+crypto/md5
+crypto/sha256
+crypto/sha1
+encoding/base64
+crypto/sha512
+crypto/cipher
+crypto/ed25519/internal/edwards25519
+vendor/golang.org/x/crypto/poly1305
+github.com/cespare/xxhash
+golang.org/x/sys/unix
+encoding/pem
+fmt
+path/filepath
+runtime/debug
+net
+vendor/golang.org/x/crypto/chacha20
+crypto/aes
+crypto/des
+io/ioutil
+github.com/prometheus/procfs/internal/util
+vendor/golang.org/x/sys/cpu
+vendor/golang.org/x/crypto/chacha20poly1305
+log
+encoding/hex
+compress/flate
+encoding/json
+net/url
+math/big
+github.com/prometheus/procfs/internal/fs
+net/http/internal
+mime/quotedprintable
+vendor/golang.org/x/crypto/curve25519
+mime
+vendor/golang.org/x/net/http2/hpack
+vendor/golang.org/x/text/unicode/norm
+vendor/golang.org/x/text/unicode/bidi
+compress/gzip
+vendor/golang.org/x/text/secure/bidirule
+github.com/prometheus/common/model
+github.com/golang/protobuf/proto
+vendor/golang.org/x/net/idna
+crypto/dsa
+crypto/rand
+encoding/asn1
+crypto/elliptic
+crypto/ed25519
+crypto/rsa
+crypto/x509/pkix
+vendor/golang.org/x/crypto/cryptobyte
+crypto/ecdsa
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/timestamp
+github.com/golang/protobuf/ptypes/duration
+github.com/matttproud/golang_protobuf_extensions/pbutil
+github.com/prometheus/client_model/go
+github.com/golang/protobuf/ptypes
+github.com/prometheus/client_golang/prometheus/internal
+net/textproto
+vendor/golang.org/x/net/http/httpproxy
+crypto/x509
+log/syslog
+github.com/prometheus/procfs
+github.com/rcrowley/go-metrics
+vendor/golang.org/x/net/http/httpguts
+mime/multipart
+crypto/tls
+net/http/httptrace
+net/http
+expvar
+github.com/prometheus/common/expfmt
+github.com/prometheus/client_golang/prometheus
+github.com/nbrownus/go-metrics-prometheus
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--builddirectory=_build -O--buildsystem=golang
+   dh_prep -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_install -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdocs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installchangelogs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installinit -O--builddirectory=_build -O--buildsystem=golang
+   dh_installsystemduser -O--builddirectory=_build -O--buildsystem=golang
+   dh_perl -O--builddirectory=_build -O--buildsystem=golang
+   dh_link -O--builddirectory=_build -O--buildsystem=golang
+   dh_strip_nondeterminism -O--builddirectory=_build -O--buildsystem=golang
+   dh_compress -O--builddirectory=_build -O--buildsystem=golang
+   dh_fixperms -O--builddirectory=_build -O--buildsystem=golang
+   dh_missing -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdeb -O--builddirectory=_build -O--buildsystem=golang
+   dh_golang -O--builddirectory=_build -O--buildsystem=golang
+   dh_gencontrol -O--builddirectory=_build -O--buildsystem=golang
+   dh_md5sums -O--builddirectory=_build -O--buildsystem=golang
+   dh_builddeb -O--builddirectory=_build -O--buildsystem=golang
+dpkg-deb: building package 'golang-github-nbrownus-go-metrics-prometheus-dev' in '../golang-github-nbrownus-go-metrics-prometheus-dev_0.0~git20210317.6474303-1_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian golang-github-nbrownus-go-metrics-prometheus_0.0~git20210317.6474303-1_amd64.changes ...
+W: golang-github-nbrownus-go-metrics-prometheus source: source-package-component-has-long-file-name 84 > 80
+W: golang-github-nbrownus-go-metrics-prometheus source: newer-standards-version 4.5.0 (current is 4.3.0)
+W: golang-github-nbrownus-go-metrics-prometheus-dev: new-package-should-close-itp-bug
+W: golang-github-nbrownus-go-metrics-prometheus-dev: extended-description-contains-empty-paragraph
+W: golang-github-nbrownus-go-metrics-prometheus-dev: spelling-error-in-description-synopsis addtional additional
+W: golang-github-nbrownus-go-metrics-prometheus-dev: package-has-long-file-name 82 > 80
+Finished running lintian.

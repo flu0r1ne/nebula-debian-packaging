@@ -1,0 +1,121 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package golang-github-flynn-noise
+dpkg-buildpackage: info: source version 1.0.0-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by ab <TODO>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --builddirectory=_build --buildsystem=golang --with=golang
+   dh_auto_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf_clean -O--builddirectory=_build -O--buildsystem=golang
+   dh_clean -O--builddirectory=_build -O--buildsystem=golang
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building golang-github-flynn-noise using existing ./golang-github-flynn-noise_1.0.0.orig.tar.gz
+dpkg-source: info: building golang-github-flynn-noise in golang-github-flynn-noise_1.0.0-1.debian.tar.xz
+dpkg-source: info: building golang-github-flynn-noise in golang-github-flynn-noise_1.0.0-1.dsc
+ debian/rules binary
+dh binary --builddirectory=_build --buildsystem=golang --with=golang
+   dh_update_autotools_config -O--builddirectory=_build -O--buildsystem=golang
+   dh_autoreconf -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_configure -O--builddirectory=_build -O--buildsystem=golang
+   dh_auto_build -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go install -gcflags=all=\"-trimpath=/home/flu0r1ne/upstream/noise-pkg/golang-github-flynn-noise/_build/src\" -asmflags=all=\"-trimpath=/home/flu0r1ne/upstream/noise-pkg/golang-github-flynn-noise/_build/src\" -v -p 32 github.com/flynn/noise github.com/flynn/noise/vectorgen
+golang.org/x/crypto/internal/subtle
+errors
+math/bits
+internal/race
+unicode
+unicode/utf8
+runtime/internal/sys
+crypto/subtle
+crypto/internal/subtle
+internal/cpu
+sync/atomic
+runtime/internal/atomic
+internal/testlog
+internal/bytealg
+math
+runtime
+strconv
+sync
+math/rand
+io
+reflect
+syscall
+hash
+crypto/cipher
+bytes
+strings
+crypto/hmac
+crypto
+crypto/sha512
+crypto/sha256
+crypto/aes
+bufio
+internal/syscall/unix
+time
+internal/poll
+sort
+encoding/binary
+os
+golang.org/x/crypto/chacha20
+golang.org/x/crypto/poly1305
+path/filepath
+fmt
+io/ioutil
+golang.org/x/sys/cpu
+golang.org/x/crypto/blake2s
+golang.org/x/crypto/blake2b
+golang.org/x/crypto/chacha20poly1305
+golang.org/x/crypto/curve25519
+encoding/hex
+math/big
+crypto/rand
+github.com/flynn/noise
+github.com/flynn/noise/vectorgen
+   dh_auto_test -O--builddirectory=_build -O--buildsystem=golang
+	cd _build && go test -vet=off -v -p 32 github.com/flynn/noise github.com/flynn/noise/vectorgen
+=== RUN   Test
+OK: 15 passed
+--- PASS: Test (0.79s)
+PASS
+ok  	github.com/flynn/noise	0.796s
+?   	github.com/flynn/noise/vectorgen	[no test files]
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--builddirectory=_build -O--buildsystem=golang
+   dh_prep -O--builddirectory=_build -O--buildsystem=golang
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/flu0r1ne/upstream/noise-pkg/golang-github-flynn-noise'
+dh_auto_install -- --no-binaries
+rm ./debian/golang-github-flynn-noise-dev/usr/share/gocode/src/github.com/flynn/noise/vectors.txt
+make[1]: Leaving directory '/home/flu0r1ne/upstream/noise-pkg/golang-github-flynn-noise'
+   dh_installdocs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installchangelogs -O--builddirectory=_build -O--buildsystem=golang
+   dh_installinit -O--builddirectory=_build -O--buildsystem=golang
+   dh_installsystemduser -O--builddirectory=_build -O--buildsystem=golang
+   dh_perl -O--builddirectory=_build -O--buildsystem=golang
+   dh_link -O--builddirectory=_build -O--buildsystem=golang
+   dh_strip_nondeterminism -O--builddirectory=_build -O--buildsystem=golang
+   dh_compress -O--builddirectory=_build -O--buildsystem=golang
+   dh_fixperms -O--builddirectory=_build -O--buildsystem=golang
+   dh_missing -O--builddirectory=_build -O--buildsystem=golang
+   dh_installdeb -O--builddirectory=_build -O--buildsystem=golang
+   dh_golang -O--builddirectory=_build -O--buildsystem=golang
+   dh_gencontrol -O--builddirectory=_build -O--buildsystem=golang
+   dh_md5sums -O--builddirectory=_build -O--buildsystem=golang
+   dh_builddeb -O--builddirectory=_build -O--buildsystem=golang
+dpkg-deb: building package 'golang-github-flynn-noise-dev' in '../golang-github-flynn-noise-dev_1.0.0-1_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../golang-github-flynn-noise_1.0.0-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian golang-github-flynn-noise_1.0.0-1_amd64.changes ...
+E: golang-github-flynn-noise changes: changed-by-address-malformed ab <TODO>
+W: golang-github-flynn-noise source: changelog-should-mention-nmu
+W: golang-github-flynn-noise source: source-nmu-has-incorrect-version-number 1.0.0-1
+W: golang-github-flynn-noise source: newer-standards-version 4.5.0 (current is 4.3.0)
+W: golang-github-flynn-noise-dev: new-package-should-close-itp-bug
+Finished running lintian.

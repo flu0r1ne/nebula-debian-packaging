@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Wed, 30 Jun 2021 17:15:19 -0500
+Source: golang-github-flynn-noise
+Binary: golang-github-flynn-noise-dev
+Architecture: source all
+Version: 1.0.0-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Changed-By: ab <TODO>
+Description:
+ golang-github-flynn-noise-dev - Go implementation of the Noise Protocol Framework (library)
+Changes:
+ golang-github-flynn-noise (1.0.0-1) UNRELEASED; urgency=medium
+ .
+   * Initial release (Closes: TODO)
+Checksums-Sha1:
+ 9928a24ae1236e761ce91adffad52c184026808c 1367 golang-github-flynn-noise_1.0.0-1.dsc
+ 483b66a3cb767b811a0940a9df662ab54bba8eb2 210067 golang-github-flynn-noise_1.0.0.orig.tar.gz
+ 3b8abc8287e72e3ef4dd1c542d4f3b93267a7417 3176 golang-github-flynn-noise_1.0.0-1.debian.tar.xz
+ 9f9db694e4f4de33b2193b28bb05537a6cc74d00 14420 golang-github-flynn-noise-dev_1.0.0-1_all.deb
+ fc7456d57179b552e970970bdaee46577f909afc 5320 golang-github-flynn-noise_1.0.0-1_amd64.buildinfo
+Checksums-Sha256:
+ 98f6f130360be94c5a5d3ceb7d3952cb169920a6809989b73ec921a41a406f61 1367 golang-github-flynn-noise_1.0.0-1.dsc
+ 64dbc5664f88bbd352de33109fa0f661c526b17f0c4a0bac3ef2a17e4fa7f2dd 210067 golang-github-flynn-noise_1.0.0.orig.tar.gz
+ 8a3a46caa8990a37274faf646d159505a16c63cba08d32c9a6fef9f1d7de5636 3176 golang-github-flynn-noise_1.0.0-1.debian.tar.xz
+ 7e5aab182001bd50994869379a7c4953ebcaebd04c7fd2ea6f404367e14d1667 14420 golang-github-flynn-noise-dev_1.0.0-1_all.deb
+ 433dd07f3daecceb747d7c553fab3238dc71e7780befb0aa502dd4dfe315cad5 5320 golang-github-flynn-noise_1.0.0-1_amd64.buildinfo
+Files:
+ 57beaaceaf76d3b3dcc1a39d2f7d3af4 1367 devel optional golang-github-flynn-noise_1.0.0-1.dsc
+ b3b2fd00f57783e0a62c953dead76ecd 210067 devel optional golang-github-flynn-noise_1.0.0.orig.tar.gz
+ 102bc10bd795f12e9312768349f59817 3176 devel optional golang-github-flynn-noise_1.0.0-1.debian.tar.xz
+ 7e2a0a21802a8dc795c725401efa6e97 14420 devel optional golang-github-flynn-noise-dev_1.0.0-1_all.deb
+ e852cdcaf731d12aca63a010ffd4edea 5320 devel optional golang-github-flynn-noise_1.0.0-1_amd64.buildinfo
